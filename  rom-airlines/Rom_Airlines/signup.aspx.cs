@@ -23,7 +23,6 @@ namespace Rom_Airlines
         protected void Button2_Click(object sender, EventArgs e)
         {
             string name = nameBox.Text,
-            surname = surnameBox.Text,
             phone = phoneBox.Text,
             email = emailBox.Text,
             birthday = birthdayBox.Text,
