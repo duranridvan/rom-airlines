@@ -51,8 +51,48 @@ namespace Rom_Airlines
             else
                 return -1;
         }
-        public static int addStaff(string name, string password, string phone, string email, string birthday, string tc, int staff) { return 1; }
-        public static int addUser(string name, string password, string phone, string email, string birthday)
+        public static int addStaff(string name, string password, string phone, string email, string birthday, string tc, int staff,string staffS,int salary) {
+            int newId = addSystemUser(name, password, password, email, birthday);
+            if (newId == -1) return -1;
+            string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            MySqlConnection thisConnection = new MySqlConnection(connection);
+            thisConnection.Open();
+
+            MySqlCommand insert = thisConnection.CreateCommand();
+            insert.CommandText = String.Format("INSERT INTO Staff(id,salary,job,tcidno) VALUES({0},{1},'{2}','{3}')",newId,salary,staffS,tc);
+            //insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId;
+            insert.ExecuteNonQuery();
+            thisConnection.Close();
+            switch (staff)
+            {
+                case 0:
+                    insert.CommandText = String.Format("INSERT INTO SystemAdmin(id) VALUES({0})", newId);
+                    break;
+                case 1:
+                    insert.CommandText = String.Format("INSERT INTO SalesOfficer(id) VALUES({0})", newId);
+                    break;
+                case 2:
+                    insert.CommandText = String.Format("INSERT INTO cabinattendant(id) VALUES({0})", newId);
+                    break;
+                case 3:
+                    insert.CommandText = String.Format("INSERT INTO pilot(id) VALUES({0})", newId);
+                    break;
+                case 4:
+                    insert.CommandText = String.Format("INSERT INTO checkinofficer(id) VALUES({0})", newId);
+                    break;
+                default:
+                    return -1;
+                    break;
+            }
+            thisConnection.Open();
+            insert.ExecuteNonQuery();
+            thisConnection.Close();
+            
+            return newId; 
+        
+        }
+
+        public static int addSystemUser(string name, string password, string phone, string email, string birthday)
         {
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
@@ -95,13 +135,28 @@ namespace Rom_Airlines
                 thisReader2.Read();
                 int newId = Convert.ToInt16(thisReader2["newId"]);
                 thisReader2.Close();
-                insert.CommandText = "INSERT INTO Customer(id) VALUES("+newId+")";
-                insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId ;
-                insert.ExecuteNonQuery();
                 thisConnection.Close();
                 return newId;
+            
+            }
+        }
+        
+        public static int addUser(string name, string password, string phone, string email, string birthday)
+        {
+            int newId = addSystemUser(name,password,phone,email,birthday);
+            if(newId==-1) return -1;
+            string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            MySqlConnection thisConnection = new MySqlConnection(connection);
+            thisConnection.Open();
+            
+            MySqlCommand insert = thisConnection.CreateCommand();
+            insert.CommandText = "INSERT INTO Customer(id) VALUES("+newId+")";
+            insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId ;
+            insert.ExecuteNonQuery();
+            thisConnection.Close();
+            return newId;
             }
         
         }
     }
-}
+

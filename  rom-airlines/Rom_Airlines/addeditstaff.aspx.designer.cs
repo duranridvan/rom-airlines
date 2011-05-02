@@ -113,6 +113,15 @@ namespace Rom_Airlines {
         protected global::System.Web.UI.WebControls.TextBox birthdayBox;
         
         /// <summary>
+        /// salaryBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox salaryBox;
+        
+        /// <summary>
         /// clearDeleteButton control.
         /// </summary>
         /// <remarks>
