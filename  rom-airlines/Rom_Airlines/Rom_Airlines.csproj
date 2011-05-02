@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addeditstaff.aspx" />
+    <Content Include="AssignCabinAttendant.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="Web.config" />
@@ -69,6 +70,13 @@
     </Compile>
     <Compile Include="addeditstaff.aspx.designer.cs">
       <DependentUpon>addeditstaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignCabinAttendant.aspx.cs">
+      <DependentUpon>AssignCabinAttendant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignCabinAttendant.aspx.designer.cs">
+      <DependentUpon>AssignCabinAttendant.aspx</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Default.aspx.cs">
