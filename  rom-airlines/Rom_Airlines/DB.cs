@@ -62,7 +62,7 @@ namespace Rom_Airlines
             MySqlCommand thisCommand = thisConnection.CreateCommand();
             thisCommand.CommandText = select;
             MySqlDataReader thisReader = thisCommand.ExecuteReader();
-            
+
             while (thisReader.Read())
             {
                 uTrue = Convert.ToInt16(thisReader["uTrue"]);
@@ -88,14 +88,60 @@ namespace Rom_Airlines
                 insert.ExecuteNonQuery();
                 int newId = Convert.ToInt16(insert.Parameters["@ID"].Value);
                 insert.CommandText = "INSERT INTO Customer(id) VALUES(@ID)";
-                insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId ;
+                insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId;
                 insert.ExecuteNonQuery();
                 thisConnection.Close();
                 return newId;
             }
-        
+
         }
+
+        public static int addStaff(string name, string password, string phone, string email, string birthday,string tc,int staff)
+        {
+            string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            MySqlConnection thisConnection = new MySqlConnection(connection);
+            int uTrue = 0;
+            string select = string.Format("SELECT (SELECT COUNT(email) FROM SystemUser WHERE email='{0}') AS uTrue", email);
+            thisConnection.Open();
+            MySqlCommand thisCommand = thisConnection.CreateCommand();
+            thisCommand.CommandText = select;
+            MySqlDataReader thisReader = thisCommand.ExecuteReader();
+
+            while (thisReader.Read())
+            {
+                uTrue = Convert.ToInt16(thisReader["uTrue"]);
+            }
+            thisReader.Close();
+            thisConnection.Close();
+            if (uTrue > 0)
+            {
+                return -1;
+            }
+            else
+            {
+                password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "md5");
+                MySqlCommand insert = thisConnection.CreateCommand();
+                insert.CommandText = "INSERT INTO SystemUser(name,password,phone,email,birthday) VALUES(@NAME,@PASSWORD,@PHONE,@EMAIL,@DATE); SET @ID = SCOPE_IDENTITY()";
+                insert.Parameters.Add("@NAME", MySqlDbType.VarChar, 50).Value = name;
+                insert.Parameters.Add("@PASSWORD", MySqlDbType.VarChar, 50).Value = password;
+                insert.Parameters.Add("@PHONE", MySqlDbType.VarChar, 15).Value = phone;
+                insert.Parameters.Add("@EMAIL", MySqlDbType.VarChar, 50).Value = email;
+                insert.Parameters.Add("@DATE", MySqlDbType.Date).Value = birthday;
+                insert.Parameters.Add("@ID", MySqlDbType.Int16).Direction = ParameterDirection.Output;
+                thisConnection.Open();
+                insert.ExecuteNonQuery();
+                int newId = Convert.ToInt16(insert.Parameters["@ID"].Value);
+                insert.CommandText = "INSERT INTO Customer(id) VALUES(@ID)";
+                insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId;
+                insert.ExecuteNonQuery();
+                thisConnection.Close();
+                return newId;
+            }
+
+        }
+
     }
+
 }
 
 // nabion la yarragim :P :P
