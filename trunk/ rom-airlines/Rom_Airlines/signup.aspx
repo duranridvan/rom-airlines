@@ -94,7 +94,8 @@
                     <asp:Button ID="Button1" runat="server" Text="Clear" />
                 </td>
                 <td class="style3">
-                    <asp:Button ID="Button2" runat="server" Text="Sign Up" />
+                    <asp:Button ID="Button2" runat="server" Text="Sign Up" 
+                        onclick="Button2_Click" />
                 </td>
                 <td class="style3">
                     &nbsp;</td>
