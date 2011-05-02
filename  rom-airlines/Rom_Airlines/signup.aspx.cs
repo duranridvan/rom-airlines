@@ -30,6 +30,17 @@ namespace Rom_Airlines
             passwordC = passwordCBox.Text,
             password = passwordBox.Text;
             if ((!password.Equals(passwordC)) || !emailC.Equals(email)) Page_Load(sender, e);
+            else {
+                
+                int id = DB.addUser(name, password, phone, email, birthday);
+                string message;
+                if (id < 0)
+                    message = "alert('This e-mail is already signed up!');";
+                else
+                    message = "alert('The user is added. ID: " + id + " ');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'";
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
+            }
 
         }
 
