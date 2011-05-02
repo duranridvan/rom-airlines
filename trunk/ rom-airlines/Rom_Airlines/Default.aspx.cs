@@ -11,12 +11,12 @@ namespace Rom_Airlines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            emailBox.Text = DB.login();
         }
 
         protected void signinButton_Click(object sender, EventArgs e)
         {
-            //afdsfasdfsfs
+            emailBox.Text = DB.login();
         }
 
 
