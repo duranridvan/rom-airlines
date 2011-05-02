@@ -100,6 +100,8 @@ namespace Rom_Airlines
         {
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
+            int a = addUser(name, password, phone, email, birthday);
+            if (a == -1) return -1;
             int uTrue = 0;
             string select = string.Format("SELECT (SELECT COUNT(email) FROM SystemUser WHERE email='{0}') AS uTrue", email);
             thisConnection.Open();
@@ -135,6 +137,13 @@ namespace Rom_Airlines
                 insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId;
                 insert.ExecuteNonQuery();
                 thisConnection.Close();
+
+
+
+
+
+
+
                 return newId;
             }
 
@@ -144,4 +153,3 @@ namespace Rom_Airlines
 
 }
 
-// nabion la yarragim :P :P
