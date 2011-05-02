@@ -14,19 +14,6 @@ namespace Rom_Airlines
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/signup.aspx");
-            Page_Load(sender, e);
-            nameBox.Text="";
-            phoneBox.Text= "";
-            emailBox.Text = "";
-            birthdayBox.Text = "";
-            emailCBox.Text = "";
-            passwordCBox.Text="";
-            passwordBox.Text ="";
-           
-        }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -50,6 +37,11 @@ namespace Rom_Airlines
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
             }
 
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/signup.aspx");
         }
 
     }
