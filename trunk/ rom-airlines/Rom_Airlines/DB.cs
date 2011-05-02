@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using Mysql.
+
 
 namespace Rom_Airlines
 {
@@ -18,7 +18,7 @@ namespace Rom_Airlines
     {
         public static string login()
         {
-            string connection = "Server=139.179.11.31;Database=r_duran;Uid=r_duran;Pwd=9rh4vxo;";//ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             SqlConnection thisConnection = new SqlConnection(connection);
             SqlCommand thisCommand = thisConnection.CreateCommand();
             DataSet thisDataset = new DataSet();
