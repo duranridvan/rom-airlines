@@ -40,7 +40,8 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    <asp:Button ID="signinButton" runat="server" Text="Sign In" />
+                    <asp:Button ID="signinButton" runat="server" Text="Sign In" 
+                        onclick="signinButton_Click" />
                 </td>
             </tr>
         </table>
