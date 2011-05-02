@@ -52,24 +52,23 @@ namespace Rom_Airlines
                 return -1;
         }
 
-        public static int addUser(string name, string surname, string password, string phone, string email, string birthday)
+        public static int addUser(string name, string password, string phone, string email, string birthday)
         {
             string connection = ConfigurationManager.ConnectionStrings["dbConD"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
-            MySqlCommand thisCommand = thisConnection.CreateCommand();
+            int uTrue = 0;
             string select = string.Format("SELECT (SELECT COUNT(email) FROM members WHERE email='{0}') AS uTrue", email);
             thisConnection.Open();
-            SqlCommand thisCommand = thisConnection.CreateCommand();
+            MySqlCommand thisCommand = thisConnection.CreateCommand();
             thisCommand.CommandText = select;
-            SqlDataReader thisReader = thisCommand.ExecuteReader();
+            MySqlDataReader thisReader = thisCommand.ExecuteReader();
+            
             while (thisReader.Read())
             {
                 uTrue = (int)thisReader["uTrue"];
             }
             thisReader.Close();
             thisConnection.Close();
-
-
             if (uTrue > 0)
             {
                 return -1;
@@ -77,21 +76,20 @@ namespace Rom_Airlines
             else
             {
                 password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "md5");
-                SqlCommand insert = thisConnection.CreateCommand();
-                insert.CommandText = "INSERT INTO SystemUser(name,surname,password,phone,email,birthday,isAdmin,isActive) VALUES(@NAME,@SURNAME,@PASSWORD,@PHONE,@EMAIL,@DATE,@ISADMIN,@ISACTIVE); SET @ID = SCOPE_IDENTITY()";
-
-                insert.Parameters.Add("@NAME", SqlDbType.NVarChar, 50).Value = name;
-                insert.Parameters.Add("@SURNAME", SqlDbType.NVarChar, 50).Value = surname;
-                insert.Parameters.Add("@PASSWORD", SqlDbType.NVarChar, 50).Value = password;
-                insert.Parameters.Add("@PHONE", SqlDbType.NVarChar, 15).Value = phone;
-                insert.Parameters.Add("@EMAIL", SqlDbType.NVarChar, 50).Value = email;
-                insert.Parameters.Add("@DATE", SqlDbType.SmallDateTime).Value = date;
-                insert.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
-                insert.Parameters.Add("@ISADMIN", SqlDbType.Bit).Value = 0;
-                insert.Parameters.Add("@ISACTIVE", SqlDbType.Bit).Value = 1;
+                MySqlCommand insert = thisConnection.CreateCommand();
+                insert.CommandText = "INSERT INTO SystemUser(name,password,phone,email,birthday) VALUES(@NAME,@PASSWORD,@PHONE,@EMAIL,@DATE,@ISADMIN,@ISACTIVE); SET @ID = SCOPE_IDENTITY()";
+                insert.Parameters.Add("@NAME", MySqlDbType.VarChar, 50).Value = name;
+                insert.Parameters.Add("@PASSWORD", MySqlDbType.VarChar, 50).Value = password;
+                insert.Parameters.Add("@PHONE", MySqlDbType.VarChar, 15).Value = phone;
+                insert.Parameters.Add("@EMAIL", MySqlDbType.VarChar, 50).Value = email;
+                insert.Parameters.Add("@DATE", MySqlDbType.DateTime).Value = birthday;
+                insert.Parameters.Add("@ID", MySqlDbType.Int16).Direction = ParameterDirection.Output;
                 thisConnection.Open();
                 insert.ExecuteNonQuery();
                 int newId = Convert.ToInt32(insert.Parameters["@ID"].Value);
+                insert.CommandText = "INSERT INTO Customer(id) VALUES(@ID)";
+                insert.Parameters.Add("@ID", MySqlDbType.Int16).Value = newId ;
+                insert.ExecuteNonQuery();
                 thisConnection.Close();
                 return newId;
             }
