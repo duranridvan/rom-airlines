@@ -16,7 +16,15 @@ namespace Rom_Airlines
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/signup.aspx");
             Page_Load(sender, e);
+            nameBox.Text="";
+            phoneBox.Text= "";
+            emailBox.Text = "";
+            birthdayBox.Text = "";
+            emailCBox.Text = "";
+            passwordCBox.Text="";
+            passwordBox.Text ="";
            
         }
 
