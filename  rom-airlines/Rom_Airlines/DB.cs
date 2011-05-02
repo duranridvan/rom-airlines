@@ -17,26 +17,48 @@ namespace Rom_Airlines
 {
     public class DB
     {
-        public static string login()
+
+        public static int LoginCheck(string username, string password, out int id)
         {
-            string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            string connection = ConfigurationManager.ConnectionStrings["dbConD"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
             MySqlCommand thisCommand = thisConnection.CreateCommand();
             DataSet thisDataset = new DataSet();
-            string select = "select * from customer";
+            int uTrue = 0, uPass = 0;
+            string select = string.Format("SELECT (SELECT COUNT(email) FROM SystemUser WHERE email='{0}') AS uTrue, (SELECT COUNT(email) FROM SystemUser WHERE email='{0}' AND password='{1}') AS uPass, id AS UserId, email FROM SystemUser WHERE email='{0}'", username, password);
             thisConnection.Open();
             thisCommand = thisConnection.CreateCommand();
             thisCommand.CommandText = select;
             MySqlDataReader thisReader = thisCommand.ExecuteReader();
-            thisReader.Read();
-            string username = thisReader["name"].ToString();
+            id = -1;
+            while (thisReader.Read())
+            {
+                uTrue = (int)thisReader["uTrue"];
+                uPass = (int)thisReader["uPass"];
+                if (uTrue == 1)
+                    if (uPass == 1)
+                    {
+                        id = (int)thisReader["UserId"];
+                        thisReader.Close();
+                        thisConnection.Close();
+                        return 1;
+                    }
+            }
             thisReader.Close();
             thisConnection.Close();
-            return username;
 
-
-            
-           
+            if (uTrue == 1 && (!(uPass == 1)))
+                return 0;
+            else
+                return -1;
         }
+
+
+
+
+
+
+
+
     }
 }

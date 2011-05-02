@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web.Security;
 
 namespace Rom_Airlines
 {
@@ -11,12 +14,39 @@ namespace Rom_Airlines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            emailBox.Text = DB.login();
+            
         }
 
-        protected void signinButton_Click(object sender, EventArgs e)
+        
+        protected void loginAut(object sender, EventArgs e)
         {
-            emailBox.Text = DB.login();
+
+            string username = usernameBox.Text;
+            string password = passwordBox.Text;
+
+            password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "md5");
+            int id;
+            int result = DB.LoginCheck(username, password, out id);
+
+            Session["loggedIn"] = false;
+            Session["loggedId"] = id;
+            switch (result)
+            {
+                case 1:
+                    Session["loggedIn"] = true;
+
+                    Response.Redirect("~/addProject.aspx");
+                    break;
+                case 0:
+                    errorLabel.Text = "Password is wrong";
+                    break;
+                case -1:
+                    errorLabel.Text = "Email is wrong";
+                    break;
+                default:
+                    errorLabel.Text = "Unexpected situation happened";
+                    break;
+            }
         }
 
 
