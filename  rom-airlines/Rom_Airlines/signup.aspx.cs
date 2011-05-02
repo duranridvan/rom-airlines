@@ -16,7 +16,22 @@ namespace Rom_Airlines
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Page_Load(sender, e);
            
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string name = nameBox.Text,
+            surname = surnameBox.Text,
+            phone = phoneBox.Text,
+            email = emailBox.Text,
+            birthday = birthdayBox.Text,
+            emailC = emailCBox.Text, 
+            passwordC = passwordCBox.Text,
+            password = passwordBox.Text;
+            if ((!password.Equals(passwordC)) || !emailC.Equals(email)) Page_Load(sender, e);
+
         }
 
     }
