@@ -43,7 +43,8 @@ namespace Rom_Airlines
         protected void Button1_Click(object sender, EventArgs e)
         {
             string date =DateBox.Text;
-            //INSERT INTO Assigned VALUES ($staffId,$flighId,$date)
+            string select = "INSERT INTO Assigned VALUES ($staffId,$flighId,$date);";
+
         }
     }
 }
