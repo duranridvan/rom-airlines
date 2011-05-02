@@ -20,7 +20,7 @@ namespace Rom_Airlines
 
         public static int LoginCheck(string username, string password, out int id)
         {
-            string connection = ConfigurationManager.ConnectionStrings["dbConD"].ToString();
+            string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
             MySqlCommand thisCommand = thisConnection.CreateCommand();
             DataSet thisDataset = new DataSet();
