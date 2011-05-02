@@ -93,7 +93,8 @@
                     <asp:Button ID="clearDeleteButton" runat="server" Text="Clear" />
                 </td>
                 <td colspan="2">
-                    <asp:Button ID="addEditButton" runat="server" Text="Create" />
+                    <asp:Button ID="addEditButton" runat="server" Text="Create" 
+                        onclick="addEditButton_Click" />
                 </td>
             </tr>
         </table>
