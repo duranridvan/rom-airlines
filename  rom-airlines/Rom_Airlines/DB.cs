@@ -32,8 +32,8 @@ namespace Rom_Airlines
             id = -1;
             while (thisReader.Read())
             {
-                uTrue = (int)thisReader["uTrue"];
-                uPass = (int)thisReader["uPass"];
+                uTrue = Convert.ToInt16(thisReader["uTrue"]);
+                uPass = Convert.ToInt16(thisReader["uPass"]);
                 if (uTrue == 1)
                     if (uPass == 1)
                     {
