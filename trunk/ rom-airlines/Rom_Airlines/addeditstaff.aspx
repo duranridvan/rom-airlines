@@ -84,9 +84,10 @@
                     <asp:TextBox ID="birthdayBox" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    &nbsp;</td>
+                    Salary</td>
                 <td>
-                    &nbsp;</td>
+                    <asp:TextBox ID="salaryBox" runat="server"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td colspan="2">

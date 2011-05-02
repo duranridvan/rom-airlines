@@ -20,15 +20,18 @@ namespace Rom_Airlines
             phone = phoneBox.Text,
             email = emailBox.Text,
             birthday = birthdayBox.Text,
-            emailC = emailCBox.Text, 
+            emailC = emailCBox.Text,
             passwordC = passwordCBox.Text,
             password = passwordBox.Text,
-            tc = tcidBox.Text;
+            tc = tcidBox.Text,
+            staffS = staffTypeSelection.SelectedItem.Text;
+            int salary = Convert.ToInt32(salaryBox.Text);
+
             int staff = Convert.ToInt16(staffTypeSelection.SelectedValue);
             if ((!password.Equals(passwordC)) || !emailC.Equals(email)) Page_Load(sender, e);
             else {
                 
-                int id = DB.addStaff(name, password, phone, email, birthday,tc,staff);
+                int id = DB.addStaff(name, password, phone, email, birthday,tc,staff,staffS,salary);
                 string message;
                 if (id < 0)
                     message = "alert('This e-mail is already signed up!');";
@@ -39,6 +42,8 @@ namespace Rom_Airlines
             }
 
         }
+
+        
 
 
     }
