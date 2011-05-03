@@ -28,12 +28,13 @@ namespace Rom_Airlines
             connection = new MySqlConnection(connectionString);
             //select = string.Format("select s.name from SystemUser s, CabinAttendant c where s.id = c.id;");
 
-           /* if (IsPostBack)
+            if (true || !IsPostBack)
             {
-                string selectQuery = String.Format("SELECT * FROM SystemUser SU,Staff ST WHERE SU.id=ST.id AND (ST.TcIdNo='{0}'  OR SU.name='{0}' OR Su.email='{0}')",input );
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                MySqlCommand command = new MySqlCommand(selectQuery,connection);
-                
+                input = TextBox1.Text;
+                string selectQuery = String.Format("SELECT SU.id as ID, SU.email as 'e-mail', SU.name as Name, SU.phoneNumber as Phone, ST.TcIdNo as 'TC ID', ST.job as 'Staff Type'   FROM SystemUser SU,Staff ST WHERE SU.id=ST.id AND (ST.TcIdNo like '%{0}%'  OR SU.name like '%{0}%' OR Su.email like '%{0}%')", input);
+
+                MySqlCommand command = new MySqlCommand(selectQuery, connection);
+
                 //command.Parameters.Add("@INPUT", MySqlDbType.VarChar, 50).Value = input;
 
                 MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(command);
@@ -44,7 +45,7 @@ namespace Rom_Airlines
                 myDataAdapter.Fill(myDataTable);
                 StaffView.DataSource = myDataTable;
                 StaffView.DataBind();
-            }*/
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace Rom_Airlines
 
         protected void Button1_Click(object sender, EventArgs e)
         { 
-            input = TextBox1.Text;
+            /*input = TextBox1.Text;
             string selectQuery = String.Format("SELECT SU.id as ID, SU.email as 'e-mail', SU.name as Name, SU.phoneNumber as Phone, ST.TcIdNo as 'TC ID', ST.job as 'Staff Type'   FROM SystemUser SU,Staff ST WHERE SU.id=ST.id AND (ST.TcIdNo like '%{0}%'  OR SU.name like '%{0}%' OR Su.email like '%{0}%')", input);
             
             MySqlCommand command = new MySqlCommand(selectQuery, connection);
@@ -73,7 +74,7 @@ namespace Rom_Airlines
 
             myDataAdapter.Fill(myDataTable);
             StaffView.DataSource = myDataTable;
-            StaffView.DataBind();
+            StaffView.DataBind();*/
         }
 
         protected void StaffView_RowEditing(object sender, GridViewEditEventArgs e)
