@@ -47,6 +47,7 @@ namespace Rom_Airlines
             MySqlCommand command = new MySqlCommand(deleteQuery, connection);
             command.ExecuteNonQuery();
             GridPlaneModel.DataBind();
+            Page_Load(sender,e);
         }
 
     }
