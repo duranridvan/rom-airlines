@@ -71,6 +71,7 @@
     <Content Include="ManageLicences.aspx" />
     <Content Include="ManagePlane.aspx" />
     <Content Include="ManagePlaneModel.aspx" />
+    <Content Include="MRAvailibity.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="ViewStaff.aspx" />
     <Content Include="Web.config" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="ManagePlaneModel.aspx.designer.cs">
       <DependentUpon>ManagePlaneModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MRAvailibity.aspx.cs">
+      <DependentUpon>MRAvailibity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MRAvailibity.aspx.designer.cs">
+      <DependentUpon>MRAvailibity.aspx</DependentUpon>
     </Compile>
     <Compile Include="signup.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>

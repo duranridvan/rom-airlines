@@ -50,7 +50,7 @@ namespace Rom_Airlines
             rDate = TextBox3.Text;
             int noOfPassengers = Convert.ToInt16(TextBox1.Text);
             int y = x;
-
+            Response.Redirect("~/MRAvailibity.aspx?dDate=" + dDate +"rDate="+rDate+"from="+From.DataValueField+"to="+To.DataValueField+"noPass="+noOfPassengers);
 
         }
         int x;
