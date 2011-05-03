@@ -24,7 +24,7 @@ namespace Rom_Airlines
             connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);
-            string selectQuery = String.Format("SELECT id as ID, name as 'Airport Name', bussCapacity as 'Bussiness Class Capacity', firstCapacity as 'First Class Capacity', econCapacity as 'Economy Class Capacity' FROM PlaneModel");
+            string selectQuery = String.Format("SELECT id as ID, name as 'Plane Model', bussCapacity as 'Bussiness Class Capacity', firstCapacity as 'First Class Capacity', econCapacity as 'Economy Class Capacity' FROM PlaneModel");
             MySqlCommand command = new MySqlCommand(selectQuery, connection);
             MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(command);
             DataTable myDataTable = new DataTable();

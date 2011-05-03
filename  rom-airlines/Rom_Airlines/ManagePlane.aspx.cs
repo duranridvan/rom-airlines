@@ -25,7 +25,7 @@ namespace Rom_Airlines
             connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);
-            string selectQuery = String.Format("SELECT id as ID, name as 'Airport Name', bussCapacity as 'Bussiness Class Capacity', firstCapacity as 'First Class Capacity', econCapacity as 'Economy Class Capacity' FROM PlaneModel");
+            string selectQuery = String.Format("SELECT P.id as ID, P.name as 'Plane Name', M.name as 'Plane Model' FROM PlaneModel M, Plane P WHERE P.modelId = M.id");
             MySqlCommand command = new MySqlCommand(selectQuery, connection);
             MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(command);
             DataTable myDataTable = new DataTable();
@@ -36,14 +36,14 @@ namespace Rom_Airlines
         protected void GridPlanes_RowEditing(object sender, GridViewEditEventArgs e)
         {
             int id = Convert.ToInt32(GridPlanes.Rows[e.NewEditIndex].Cells[1].Text);
-            Response.Redirect("~/AddEditPlane.aspx?palaneId=" + id);
+            Response.Redirect("~/AddEditPlane.aspx?planeId=" + id);
         }
         protected void GridPlanes_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int id = Convert.ToInt32(GridPlanes.Rows[e.RowIndex].Cells[1].Text);
             connection = new MySqlConnection(connectionString);
             connection.Open();
-            string deleteQuery = String.Format("delete from planemodel where id='{0}'", id);
+            string deleteQuery = String.Format("delete from plane where id='{0}'", id);
             MySqlCommand command = new MySqlCommand(deleteQuery, connection);
             command.ExecuteNonQuery();
             GridPlanes.DataBind();
