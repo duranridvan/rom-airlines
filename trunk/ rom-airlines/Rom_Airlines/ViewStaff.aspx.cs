@@ -22,7 +22,7 @@ namespace Rom_Airlines
         MySqlConnection connection;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            
             connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);
@@ -82,9 +82,11 @@ namespace Rom_Airlines
             Response.Redirect("~/AddEditStuff.aspx?staffId=" + id);
         }
 
-        protected void StaffView_RowDeleting(object sender, GridViewEditEventArgs e)
+        protected void StaffView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = Convert.ToInt32(StaffView.Rows[e.NewEditIndex].Cells[1].Text);
+            int id = Convert.ToInt32(StaffView.Rows[e.RowIndex].Cells[1].Text);
+            connection = new MySqlConnection(connectionString);
+            connection.Open();
             string deleteQuery = String.Format("delete from staff where id='{0}'",id);
             MySqlCommand command = new MySqlCommand(deleteQuery, connection);
             command.ExecuteNonQuery();
