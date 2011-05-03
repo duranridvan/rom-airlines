@@ -38,7 +38,7 @@ namespace Rom_Airlines
                 string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
                 MySqlConnection thisConnection = new MySqlConnection(connection);
                 DataSet thisDataset = new DataSet();
-                string select = string.Format("SELECT name, busscapacity,firstcapacity,econcapacity FROM planemodel WHERE id={0} AND c.id=a.cityid", modelId);
+                string select = string.Format("SELECT name, busscapacity,firstcapacity,econcapacity FROM planemodel WHERE id={0} ", modelId);
                 thisConnection.Open();
                 MySqlCommand thisCommand = thisConnection.CreateCommand();
                 thisCommand.CommandText = select;
