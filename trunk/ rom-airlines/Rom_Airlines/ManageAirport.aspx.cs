@@ -25,7 +25,8 @@ namespace Rom_Airlines
             connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);
-            string selectQuery = String.Format("SELECT P.id as ID, P.name as 'Plane Name', M.name as 'Plane Model' FROM PlaneModel M, Plane P WHERE P.modelId = M.id");
+            string input = TextBox1.Text;
+            string selectQuery = String.Format("SELECT A.id as ID , A.name as 'Airport Name', C.name as 'City' FROM City C,Airport A WHERE A.cityId = C.id AND (C.name LIKE '%{0}%' OR A.name LIKE '%{0}%')",input);
             MySqlCommand command = new MySqlCommand(selectQuery, connection);
             MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(command);
             DataTable myDataTable = new DataTable();
