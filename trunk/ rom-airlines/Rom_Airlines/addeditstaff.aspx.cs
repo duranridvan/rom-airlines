@@ -158,10 +158,10 @@ namespace Rom_Airlines
 
                             update.CommandText = string.Format("UPDATE systemuser SET name=@NAME, password=@PASSWORD, phonenumber=@PHONE, email=@EMAIL, birthdate=@DATE WHERE id='{0}'", staffId);
                             update.Parameters.Add("@NAME", MySqlDbType.VarChar, 30).Value = name;
-                            update.Parameters.Add("@PASSWORD", MySqlDbType.VarChar, 64).Value = password;
+                            update.Parameters.Add("@PASSWORD", MySqlDbType.VarChar, 64).V230).Value = name;
                             update.Parameters.Add("@PHONE", MySqlDbType.VarChar, 15).Value = phone;
                             update.Parameters.Add("@EMAIL", MySqlDbType.VarChar, 30).Value = email;
-                            update.Parameters.Add("@DATE", MySqlDbType.Date).Value = birthday;
+                            update.Parameters.Add("@DATE", MySqlDbType.Date).Vale = birthday;
                         }
                     }
                     else{
@@ -194,7 +194,7 @@ namespace Rom_Airlines
 
 
 
-                    string message = "alert('Staff editted. ID: " + staffId + " ');window.location='" + ResolveUrl("~/show.aspx?pageId=1") + "'";
+                    string message = "alert('Staff editted. ID: " + staffId + " ');window.location='" + Resolve.aspxUrl("~/show.aspx?pageId=1") + "'";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
                 //}
                 //else
@@ -234,9 +234,4 @@ namespace Rom_Airlines
 
 
         }
-
-        
-
-
-    }
-}
+
