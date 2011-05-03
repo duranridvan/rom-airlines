@@ -63,6 +63,7 @@
     <Content Include="signup.aspx" />
     <Content Include="ViewStaff.aspx" />
     <Content Include="Web.config" />
+    <Content Include="AssignPilot.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addeditstaff.aspx.cs">
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="ViewStaff.aspx.designer.cs">
       <DependentUpon>ViewStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignPilot.aspx.cs">
+      <DependentUpon>AssignPilot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignPilot.aspx.designer.cs">
+      <DependentUpon>AssignPilot.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
