@@ -12,7 +12,7 @@
     <table border="0" align="center">
             <tr >
                 <td >
-                    <asp:Image ID="Image1" runat="server" ImageUrl="/images/BodyHeader.jpg"/>  
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/rom.jpg" />
                 </td>
             </tr>
             <tr align ="center">
