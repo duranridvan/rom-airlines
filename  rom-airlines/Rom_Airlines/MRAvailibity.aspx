@@ -42,7 +42,8 @@
                 <asp:Button ID="Button2" runat="server" Text="Previous Day" />
             </td>
             <td style="text-align: center">
-                <asp:GridView ID="Flights2Grid" runat="server" AutoGenerateSelectButton="True">
+                <asp:GridView ID="Flights2Grid" runat="server" AutoGenerateSelectButton="True"
+                onselectedindexchanged="Flights2Grid_SelectedIndexChanged">
                 </asp:GridView>
             </td>
             <td style="text-align: right">
