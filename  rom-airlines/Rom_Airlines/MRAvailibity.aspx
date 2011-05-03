@@ -21,7 +21,8 @@
     
     </div>
     <p>
-        <asp:HyperLink ID="LinkSchedule" runat="server" NavigateUrl="/">Schedule</asp:HyperLink>
+        <asp:HyperLink ID="LinkSchedule" runat="server" 
+            NavigateUrl="/MakeReservation.aspx">Schedule</asp:HyperLink>
     &nbsp;&gt; Availibility</p>
     <table class="style1" border="1">
         <tr>
