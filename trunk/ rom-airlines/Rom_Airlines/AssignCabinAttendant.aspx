@@ -45,8 +45,10 @@
                 <td class="style3">
                     Date:</td>
                 <td>
-                    <asp:TextBox ID="DateBox" runat="server"></asp:TextBox>
-                </td>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button2" runat="server" onclick="Button2_Click1" 
+                        style="height: 26px" Text="Ok" />
+&nbsp;(YYYY-MM-DD)</td>
             </tr>
             <tr>
                 <td class="style3">
