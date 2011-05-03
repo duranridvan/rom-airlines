@@ -64,12 +64,25 @@ namespace Rom_Airlines
             myDataAdapter.Fill(myDataTable);
             Flights2Grid.DataSource = myDataTable;
             Flights2Grid.DataBind();
+            try { Flights2Grid.SelectedRow.Style.Add(HtmlTextWriterStyle.BackgroundColor, "yellow"); }
+            catch (Exception ex) { }
+            try { Flights1Grid.SelectedRow.Style.Add(HtmlTextWriterStyle.BackgroundColor, "yellow"); }
+            catch (Exception ex) { }
 
         }
 
         protected void Flights1Grid_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Flights1Grid.SelectedRow.Style.Add(HtmlTextWriterStyle.BackgroundColor, "yellow");
+            try { Flights2Grid.SelectedRow.Style.Add(HtmlTextWriterStyle.BackgroundColor, "yellow"); }
+            catch (Exception ex) { }
+        }
 
+        protected void Flights2Grid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Flights2Grid.SelectedRow.Style.Add(HtmlTextWriterStyle.BackgroundColor, "yellow");
+            try { Flights1Grid.SelectedRow.Style.Add(HtmlTextWriterStyle.BackgroundColor, "yellow"); }
+            catch (Exception ex) { }
         }
         
         protected string parseDate(string date)
@@ -79,10 +92,19 @@ namespace Rom_Airlines
 
         protected void ContinueButton_Click(object sender, EventArgs e)
         {
-            string did = Flights1Grid.SelectedRow.Cells[1].Text;
-            string rid = Flights2Grid.SelectedRow.Cells[1].Text;
-            string ddate = parseDate(Flights1Grid.SelectedRow.Cells[2].Text);
-            string rdate = parseDate(Flights2Grid.SelectedRow.Cells[2].Text) ;
+            string did, rid, ddate, rdate;
+            try
+            {
+                did = Flights1Grid.SelectedRow.Cells[1].Text;
+                rid = Flights2Grid.SelectedRow.Cells[1].Text;
+                ddate = parseDate(Flights1Grid.SelectedRow.Cells[2].Text);
+                rdate = parseDate(Flights2Grid.SelectedRow.Cells[2].Text);
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Fligh isn't selected", true);
+                return;
+            }
 
             connection = new MySqlConnection(connectionString);
             connection.Open();
