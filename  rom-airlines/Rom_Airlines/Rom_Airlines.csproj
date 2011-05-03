@@ -65,6 +65,7 @@
     <Content Include="ViewStaff.aspx" />
     <Content Include="Web.config" />
     <Content Include="AssignPilot.aspx" />
+    <Content Include="ViewCustomer.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddEditAirport.aspx.cs">
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="AssignPilot.aspx.designer.cs">
       <DependentUpon>AssignPilot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomer.aspx.cs">
+      <DependentUpon>ViewCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCustomer.aspx.designer.cs">
+      <DependentUpon>ViewCustomer.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
