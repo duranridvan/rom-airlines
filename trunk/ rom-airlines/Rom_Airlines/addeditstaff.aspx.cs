@@ -19,6 +19,7 @@ namespace Rom_Airlines
         {
             if (!IsPostBack && (!((Request.QueryString.Count) < 1)))
             {
+                addEditButton.Text = "Edit";
                 int staffId = Convert.ToInt32(Request.QueryString.Get("staffId"));
                 //int loggedId = (int)Session["loggedId"];
                 //bool loggedIn = (bool)Session["loggedIn"];
@@ -53,68 +54,10 @@ namespace Rom_Airlines
                 staffTypeSelection.Enabled = false;
                 thisReader.Close();
                 thisConnection.Close();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 //}
             }
         }
-        /*
-        protected void saveMem(object sender, EventArgs e)
-        {
-            
-        }
 
-        */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-        */
         protected void addEditButton_Click(object sender, EventArgs e)
         {
             string name = nameBox.Text,
@@ -183,10 +126,7 @@ namespace Rom_Airlines
 
                             update.ExecuteNonQuery();
                             
-                            thisConnection.Close();
-
-
-
+                            thisConnect
 
 
 
@@ -214,18 +154,11 @@ namespace Rom_Airlines
                         message = "alert('The user is added. ID: " + id + " ');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'";
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
-                }
-            }
+                   }
 
-
-
-
-
-
-
-
-
-
+        protected void clearDeleteButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/addeditstaff.aspx");
 
 
 

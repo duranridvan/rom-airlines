@@ -91,7 +91,8 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Button ID="clearDeleteButton" runat="server" Text="Clear" />
+                    <asp:Button ID="clearDeleteButton" runat="server" Text="Clear" 
+                        onclick="clearDeleteButton_Click" />
                 </td>
                 <td colspan="2">
                     <asp:Button ID="addEditButton" runat="server" Text="Create" 
