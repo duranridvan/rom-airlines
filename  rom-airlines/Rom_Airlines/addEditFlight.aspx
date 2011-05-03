@@ -59,12 +59,12 @@
                 <td>
                     Time</td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="deptTimeBox" runat="server"></asp:TextBox>
                 </td>
                 <td>
                     Time</td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="landTimeBox" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -73,7 +73,8 @@
                 <td colspan="2">
                     &nbsp;</td>
                 <td colspan="2">
-                    <asp:Button ID="addeditbutton" runat="server" Text="Add" />
+                    <asp:Button ID="addeditbutton" runat="server" Text="Add" 
+                        onclick="addeditbutton_Click" />
                 </td>
             </tr>
         </table>
