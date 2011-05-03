@@ -57,6 +57,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addCity.aspx" />
     <Content Include="AddEditAirport.aspx" />
     <Content Include="addeditstaff.aspx" />
     <Content Include="AssignCabinAttendant.aspx" />
@@ -69,6 +70,13 @@
     <Content Include="ViewCustomer.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addCity.aspx.cs">
+      <DependentUpon>addCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addCity.aspx.designer.cs">
+      <DependentUpon>addCity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddEditAirport.aspx.cs">
       <DependentUpon>AddEditAirport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
