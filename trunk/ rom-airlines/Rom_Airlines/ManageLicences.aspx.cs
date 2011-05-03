@@ -43,7 +43,7 @@ namespace Rom_Airlines
         protected void GridLicences_RowEditing(object sender, GridViewEditEventArgs e)
         {
             int id = Convert.ToInt32(GridLicences.Rows[e.NewEditIndex].Cells[1].Text);
-            Response.Redirect("~/EditLicence.aspx?modelId=" + id);
+            Response.Redirect("~/EditLicence.aspx?licenceId=" + id);
         }
 
         protected void GridLicences_RowDeleting(object sender, GridViewDeleteEventArgs e)
