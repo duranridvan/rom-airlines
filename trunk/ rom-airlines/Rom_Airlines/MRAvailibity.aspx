@@ -8,9 +8,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div style="text-align: center">
+    
+        <h1>
+            Make Reservation</h1>
     
     </div>
+    <p>
+        <asp:HyperLink ID="LinkSchedule" runat="server" NavigateUrl="/">Schedule</asp:HyperLink>
+    </p>
     </form>
 </body>
 </html>
