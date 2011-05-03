@@ -23,14 +23,14 @@
     <p>
         <asp:HyperLink ID="LinkSchedule" runat="server" NavigateUrl="/">Schedule</asp:HyperLink>
     &nbsp;&gt; Availibility</p>
-    <table class="style1">
+    <table class="style1" border="1">
         <tr>
             <td>
                 <asp:Button ID="Button1" runat="server" Text="Previous Day" />
             </td>
             <td style="text-align: center">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateSelectButton="True" 
-                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                <asp:GridView ID="Flights1Grid" runat="server" AutoGenerateSelectButton="True" 
+                    onselectedindexchanged="Flights1Grid_SelectedIndexChanged">
                 </asp:GridView>
             </td>
             <td style="text-align: right">
@@ -42,11 +42,17 @@
                 <asp:Button ID="Button2" runat="server" Text="Previous Day" />
             </td>
             <td style="text-align: center">
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateSelectButton="True">
+                <asp:GridView ID="Flights2Grid" runat="server" AutoGenerateSelectButton="True">
                 </asp:GridView>
             </td>
             <td style="text-align: right">
                 <asp:Button ID="Button4" runat="server" Text="Next Day" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: right">
+                <asp:Button ID="ContinueButton" runat="server" onclick="ContinueButton_Click" 
+                    Text="Continue" />
             </td>
         </tr>
     </table>
