@@ -68,6 +68,8 @@
     <Content Include="Default.aspx" />
     <Content Include="EditLicence.aspx" />
     <Content Include="MakeReservation.aspx" />
+    <Content Include="ManageAirport.aspx" />
+    <Content Include="ManageFlight.aspx" />
     <Content Include="ManageLicences.aspx" />
     <Content Include="ManagePlane.aspx" />
     <Content Include="ManagePlaneModel.aspx" />
@@ -156,6 +158,20 @@
     </Compile>
     <Compile Include="MakeReservation.aspx.designer.cs">
       <DependentUpon>MakeReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAirport.aspx.cs">
+      <DependentUpon>ManageAirport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageAirport.aspx.designer.cs">
+      <DependentUpon>ManageAirport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageFlight.aspx.cs">
+      <DependentUpon>ManageFlight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageFlight.aspx.designer.cs">
+      <DependentUpon>ManageFlight.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageLicences.aspx.cs">
       <DependentUpon>ManageLicences.aspx</DependentUpon>
