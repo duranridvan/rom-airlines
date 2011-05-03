@@ -18,10 +18,14 @@ namespace Rom_Airlines
     public partial class ViewStaff : System.Web.UI.Page
     {
         string input;
+        string connectionString;
+        MySqlConnection connection;
         protected void Page_Load(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
+            connection = new MySqlConnection(connectionString);
             //select = string.Format("select s.name from SystemUser s, CabinAttendant c where s.id = c.id;");
 
            /* if (IsPostBack)
@@ -54,11 +58,10 @@ namespace Rom_Airlines
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+        { 
             input = TextBox1.Text;
             string selectQuery = String.Format("SELECT SU.id as ID, SU.email as 'e-mail', SU.name as Name, SU.phoneNumber as Phone, ST.TcIdNo as 'TC ID', ST.job as 'Staff Type'   FROM SystemUser SU,Staff ST WHERE SU.id=ST.id AND (ST.TcIdNo like '%{0}%'  OR SU.name like '%{0}%' OR Su.email like '%{0}%')", input);
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            
             MySqlCommand command = new MySqlCommand(selectQuery, connection);
 
             //command.Parameters.Add("@INPUT", MySqlDbType.VarChar, 50).Value = input;
@@ -76,14 +79,16 @@ namespace Rom_Airlines
         protected void StaffView_RowEditing(object sender, GridViewEditEventArgs e)
         {
             int id = Convert.ToInt32(StaffView.Rows[e.NewEditIndex].Cells[1].Text);
-            Response.Redirect("~/AddEditStuff.aspx?staffId=" + id);/*
-            if (projectsGrid.ID.Equals("projectsGrid"))
-                Response.Redirect("~/addProject.aspx?projectId=" + id);
-            else if (projectsGrid.ID.Equals("membersGrid"))
-                Response.Redirect("~/addMember.aspx?userId=" + id);
-            else if (projectsGrid.ID.Equals("customersGrid"))
-                Response.Redirect("~/addCustomer.aspx?customerId=" + id);*/
+            Response.Redirect("~/AddEditStuff.aspx?staffId=" + id);
+        }
 
+        protected void StaffView_RowDeleting(object sender, GridViewEditEventArgs e)
+        {
+            int id = Convert.ToInt32(StaffView.Rows[e.NewEditIndex].Cells[1].Text);
+            string deleteQuery = String.Format("delete from staff where id='{0}'",id);
+            MySqlCommand command = new MySqlCommand(deleteQuery, connection);
+            command.ExecuteNonQuery();
+            StaffView.DataBind();
         }
     }
 }
