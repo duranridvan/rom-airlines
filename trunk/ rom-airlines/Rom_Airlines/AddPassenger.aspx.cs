@@ -30,7 +30,8 @@ namespace Rom_Airlines
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int noOfPass=3;
+            int noOfPass=Convert.ToInt16(Request.QueryString.Get("noPass"));
+            int rId = Convert.ToInt16(Request.QueryString.Get("rId"));
             string name1, name2, name3, date1, date2, date3;
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
@@ -44,19 +45,26 @@ namespace Rom_Airlines
                 name1 = NameBox1.Text;
                 date1 = DBox1.Text;
                 insert.CommandText = String.Format("INSERT INTO Passenger(name,birthday) VALUES('{0}','{1}')",name1, date1);
+                insert.ExecuteNonQuery();
                 newId1 = Convert.ToInt16(insert.LastInsertedId);
+                insert.CommandText = String.Format("Insert into ReservationPassenger(reservationId,passengerId) Values({0},{1})", rId,newId1);
+
             }
             else if (noOfPass == 2)
             {
                 name1 = NameBox1.Text;
                 date1 = DBox1.Text;
-                name2 = NameBox1.Text;
-                date2 = DBox1.Text;
+                name2 = NameBox2.Text;
+                date2 = DBox2.Text;
                 insert.CommandText = String.Format("INSERT INTO Passenger(name,birthday) VALUES('{0}','{1}')", name1, date1);
+                insert.ExecuteNonQuery();
                 newId1 = Convert.ToInt16(insert.LastInsertedId);
+                insert.CommandText = String.Format("Insert into ReservationPassenger(reservationId,passengerId) Values({0},{1})", rId, newId1);
                 insert.ExecuteNonQuery();
                 insert.CommandText = String.Format("INSERT INTO Passenger(name,birthday) VALUES('{0}','{1}')", name2, date2);
+                insert.ExecuteNonQuery();
                 newId2 = Convert.ToInt16(insert.LastInsertedId);
+                insert.CommandText = String.Format("Insert into ReservationPassenger(reservationId,passengerId) Values({0},{1})", rId, newId2);
             }
             else {
                 name1 = NameBox1.Text;
@@ -66,15 +74,24 @@ namespace Rom_Airlines
                 name3 = NameBox3.Text;
                 date3 = DBox3.Text;
                 insert.CommandText = String.Format("INSERT INTO Passenger(name,birthday) VALUES('{0}','{1}')", name1, date1);
+                insert.ExecuteNonQuery();
                 newId1 = Convert.ToInt16(insert.LastInsertedId);
+                insert.CommandText = String.Format("Insert into ReservationPassenger(reservationId,passengerId) Values({0},{1})", rId, newId1);
                 insert.ExecuteNonQuery();
                 insert.CommandText = String.Format("INSERT INTO Passenger(name,birthday) VALUES('{0}','{1}')", name2, date2);
+                insert.ExecuteNonQuery();
                 newId2 = Convert.ToInt16(insert.LastInsertedId);
                 insert.ExecuteNonQuery();
+                insert.CommandText = String.Format("Insert into ReservationPassenger(reservationId,passengerId) Values({0},{1})", rId, newId2);
+                insert.ExecuteNonQuery();
                 insert.CommandText = String.Format("INSERT INTO Passenger(name,birthday) VALUES('{0}','{1}')", name3, date3);
-                newId3 = Convert.ToInt16(insert.LastInsertedId);            
+                insert.ExecuteNonQuery();
+                newId3 = Convert.ToInt16(insert.LastInsertedId);
+                insert.CommandText = String.Format("Insert into ReservationPassenger(reservationId,passengerId) Values({0},{1})", rId, newId3);
             }
+            
             insert.ExecuteNonQuery();
+            Response.Redirect("~/Payment.aspx?rId="+rId);
             thisConnection.Close();
         }
     }
