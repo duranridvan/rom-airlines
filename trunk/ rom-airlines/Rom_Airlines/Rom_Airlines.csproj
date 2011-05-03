@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="addCity.aspx" />
     <Content Include="AddEditAirport.aspx" />
+    <Content Include="AddEditPlaneModel.aspx" />
     <Content Include="addeditstaff.aspx" />
     <Content Include="AssignCabinAttendant.aspx" />
     <Content Include="AssignCheckInOfficer.aspx" />
@@ -84,6 +85,13 @@
     </Compile>
     <Compile Include="AddEditAirport.aspx.designer.cs">
       <DependentUpon>AddEditAirport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditPlaneModel.aspx.cs">
+      <DependentUpon>AddEditPlaneModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditPlaneModel.aspx.designer.cs">
+      <DependentUpon>AddEditPlaneModel.aspx</DependentUpon>
     </Compile>
     <Compile Include="addeditstaff.aspx.cs">
       <DependentUpon>addeditstaff.aspx</DependentUpon>
