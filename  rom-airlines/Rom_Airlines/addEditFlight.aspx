@@ -25,40 +25,46 @@
                 <td colspan="2">
                     Flight No</td>
                 <td colspan="2">
-                    &nbsp;</td>
+                    <asp:TextBox ID="flightidBox" runat="server"></asp:TextBox>
+                </td>
                 <td>
                     Date</td>
                 <td>
-                    &nbsp;</td>
+                    <asp:TextBox ID="dateBox" runat="server"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td>
                     Plane:</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="planeList" runat="server">
                     </asp:DropDownList>
                 </td>
                 <td>
-                    &nbsp;</td>
+                    Departure</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList2" runat="server">
+                    <asp:DropDownList ID="departureList" runat="server">
                     </asp:DropDownList>
                 </td>
-                <td colspan="2">
-                    <asp:DropDownList ID="DropDownList3" runat="server">
+                <td>
+                    Landing</td>
+                <td>
+                    <asp:DropDownList ID="landingList" runat="server">
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
                     &nbsp;</td>
-                <td colspan="2">
-                    <asp:DropDownList ID="DropDownList4" runat="server">
-                    </asp:DropDownList>
+                <td>
+                    Time</td>
+                <td>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 </td>
-                <td colspan="2">
-                    <asp:DropDownList ID="DropDownList5" runat="server">
-                    </asp:DropDownList>
+                <td>
+                    Time</td>
+                <td>
+                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -67,7 +73,7 @@
                 <td colspan="2">
                     &nbsp;</td>
                 <td colspan="2">
-                    <asp:Button ID="Button1" runat="server" Text="Button" />
+                    <asp:Button ID="addeditbutton" runat="server" Text="Add" />
                 </td>
             </tr>
         </table>
