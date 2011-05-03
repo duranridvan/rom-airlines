@@ -19,6 +19,7 @@ namespace Rom_Airlines
     {
         string connectionString;
         MySqlConnection connection;
+        int noPass;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["loggedIn"] == null)
@@ -28,12 +29,80 @@ namespace Rom_Airlines
             if (!isLogged)
                 Response.Redirect("~/Default.aspx");
 
-            Request.QueryString.Get("");
+            string dDate = Request.QueryString.Get("dDate");
+            string rDate = Request.QueryString.Get("rDate");
+            int from = Convert.ToInt32(Request.QueryString.Get("from"));
+            int to = Convert.ToInt32(Request.QueryString.Get("to"));
+            noPass = Convert.ToInt32(Request.QueryString.Get("noPass"));
+            int type = Convert.ToInt32(Request.QueryString.Get("type"));
+
+            connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
+            DataSet thisDataset = new DataSet();
+            connection = new MySqlConnection(connectionString);
+            string selectQuery = String.Format(
+                "SELECT F.id as 'Flight No', F.fdate as 'Date', CONCAT(DAC.name,' ',DA.name) as 'Dep. Airport', CONCAT(LAC.name,' ',LA.name) as 'Lan. Airport', F.departuretime as 'Dep. Time', F.landingtime as 'Lan. Time'"+
+                " FROM Flight F, Airport DA, Airport LA, City DAC, City LAC" + 
+                " WHERE F.fDate = '{0}' and F.departureAirport = '{1}' and  F.landingAirport= '{2}' and "+
+                " F.departureAirport=DA.id and DA.cityId = DAC.id and F.landingAirport=LA.id and LA.cityId=LAC.id"
+                ,dDate,from,to);
+            MySqlCommand command = new MySqlCommand(selectQuery, connection);
+            MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(command);
+            DataTable myDataTable = new DataTable();
+            myDataAdapter.Fill(myDataTable);
+            Flights1Grid.DataSource = myDataTable;
+            Flights1Grid.DataBind();
+
+            selectQuery = String.Format(
+                "SELECT F.id as 'Flight No', F.fdate as 'Date', CONCAT(DAC.name,' ',DA.name) as 'Dep. Airport', CONCAT(LAC.name,' ',LA.name) as 'Lan. Airport', F.departuretime as 'Dep. Time', F.landingtime as 'Lan. Time'" +
+                " FROM Flight F, Airport DA, Airport LA, City DAC, City LAC" +
+                " WHERE F.fDate = '{0}' and F.departureAirport = '{1}' and  F.landingAirport= '{2}' and " +
+                " F.departureAirport=DA.id and DA.cityId = DAC.id and F.landingAirport=LA.id and LA.cityId=LAC.id"
+                , rDate, to, from);
+            command = new MySqlCommand(selectQuery, connection);
+            myDataAdapter = new MySqlDataAdapter(command);
+            myDataTable = new DataTable();
+            myDataAdapter.Fill(myDataTable);
+            Flights2Grid.DataSource = myDataTable;
+            Flights2Grid.DataBind();
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void Flights1Grid_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+        
+        protected string parseDate(string date)
+        {
+            return date.Substring(6, 4) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+        }
+
+        protected void ContinueButton_Click(object sender, EventArgs e)
+        {
+            string did = Flights1Grid.SelectedRow.Cells[1].Text;
+            string rid = Flights2Grid.SelectedRow.Cells[1].Text;
+            string ddate = parseDate(Flights1Grid.SelectedRow.Cells[2].Text);
+            string rdate = parseDate(Flights2Grid.SelectedRow.Cells[2].Text) ;
+
+            connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string insertQuery = "insert into reservation() values()";
+            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            command.ExecuteNonQuery();
+            int resid = (int)command.LastInsertedId;
+
+            insertQuery = String.Format("insert into reservationflight(flightId,flightDate,reserveId)"+
+                                        " values('{0}','{1}','{2}')",did,ddate,resid );
+            command = new MySqlCommand(insertQuery, connection);
+            command.ExecuteNonQuery();
+
+            insertQuery = String.Format("insert into reservationflight(flightId,flightDate,reserveId)" +
+                                        " values('{0}','{1}','{2}')", rid, rdate, resid);
+            command = new MySqlCommand(insertQuery, connection);
+            command.ExecuteNonQuery();
+
+            Response.Redirect("~/AddPassenger.aspx?rId=" + resid + "&noPass=" + noPass);
+
 
         }
     }

@@ -41,13 +41,13 @@ namespace Rom_Airlines {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// GridView1 control.
+        /// Flights1Grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView Flights1Grid;
         
         /// <summary>
         /// Button3 control.
@@ -68,13 +68,13 @@ namespace Rom_Airlines {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// GridView2 control.
+        /// Flights2Grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView Flights2Grid;
         
         /// <summary>
         /// Button4 control.
@@ -84,5 +84,14 @@ namespace Rom_Airlines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button4;
+        
+        /// <summary>
+        /// ContinueButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ContinueButton;
     }
 }
