@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B4EB7B5B-D3D3-4C57-8CF2-9E369D3B8169}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -59,6 +59,8 @@
   <ItemGroup>
     <Content Include="addCity.aspx" />
     <Content Include="AddEditAirport.aspx" />
+    <Content Include="addEditFlight.aspx" />
+    <Content Include="addEditPlane.aspx" />
     <Content Include="AddEditPlaneModel.aspx" />
     <Content Include="addeditstaff.aspx" />
     <Content Include="AssignCabinAttendant.aspx" />
@@ -88,6 +90,20 @@
     </Compile>
     <Compile Include="AddEditAirport.aspx.designer.cs">
       <DependentUpon>AddEditAirport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addEditFlight.aspx.cs">
+      <DependentUpon>addEditFlight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addEditFlight.aspx.designer.cs">
+      <DependentUpon>addEditFlight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addEditPlane.aspx.cs">
+      <DependentUpon>addEditPlane.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addEditPlane.aspx.designer.cs">
+      <DependentUpon>addEditPlane.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddEditPlaneModel.aspx.cs">
       <DependentUpon>AddEditPlaneModel.aspx</DependentUpon>
@@ -206,6 +222,9 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

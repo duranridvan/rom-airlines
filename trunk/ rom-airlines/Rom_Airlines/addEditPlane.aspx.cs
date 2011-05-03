@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Configuration;
 using System.Data;
-using System.Data.Odbc;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -14,65 +13,67 @@ using System.Xml.Linq;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
 namespace Rom_Airlines
 {
-    public partial class AddEditAirport : System.Web.UI.Page
+    public partial class addEditPlane : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
-            string select = "select name,id from city;";
+            string select = "select name,id from planemodel;";
 
             MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(select, connection);
             DataSet myDataSet = new DataSet();
-            myDataAdapter.Fill(myDataSet, "city");
-            cityList.DataSource = myDataSet;
-            cityList.DataTextField = "name";
-            cityList.DataValueField = "id";
+            myDataAdapter.Fill(myDataSet, "planemodel");
+            planeModelList.DataSource = myDataSet;
+            planeModelList.DataTextField = "name";
+            planeModelList.DataValueField = "id";
             if (!IsPostBack)
-                cityList.DataBind();
+                planeModelList.DataBind();
 
             if (!IsPostBack && (!((Request.QueryString.Count) < 1)))
             {
-                addButton.Text = "Edit";
-                int aId = Convert.ToInt32(Request.QueryString.Get("aId"));
+                addeditbutton.Text = "Edit";
+                int planeId = Convert.ToInt32(Request.QueryString.Get("planeId"));
                 //int loggedId = (int)Session["loggedId"];
                 //bool loggedIn = (bool)Session["loggedIn"];
                 //bool isAdmin = dbOps.IsAdmin(loggedId);
                 //if (!loggedIn)
-                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Oturum açmadınız.');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'", true);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Oturum açmadınız.');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'", true);
                 //else if (!isAdmin && (userId != loggedId))
                 //{
-                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Bu kullanıcı için yetkili değilsiniz');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'", true);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Bu kullanıcı için yetkili değilsiniz');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'", true);
                 //}
                 //else
                 //{
 
                 MySqlConnection thisConnection = new MySqlConnection(connection);
                 DataSet thisDataset = new DataSet();
-                select = string.Format("SELECT c.name as cname,a.name as aname,c.id as cid FROM airport a, city c WHERE a.id={0} AND c.id=a.cityid", aId);
+                select = string.Format("SELECT m.name as mname,p.name as pname,m.id as mid, p.id as pid FROM plane p, planemodel m WHERE p.id={0} AND m.id=p.modelid", planeId);
                 thisConnection.Open();
                 MySqlCommand thisCommand = thisConnection.CreateCommand();
                 thisCommand.CommandText = select;
                 MySqlDataReader thisReader = thisCommand.ExecuteReader();
 
                 thisReader.Read();
-                nameBox.Text = thisReader["aname"].ToString();
-                cityList.SelectedValue = thisReader["cid"].ToString();
+                nameBox.Text = thisReader["pname"].ToString();
+                //planeModelList.SelectedItem.Text = thisReader["mname"].ToString();
+                planeModelList.SelectedValue = thisReader["mid"].ToString();
                 thisReader.Close();
                 thisConnection.Close();
                 //}
             }
         }
 
-        protected void addButton_Click(object sender, EventArgs e)
+        protected void addeditbutton_Click(object sender, EventArgs e)
         {
             string name = nameBox.Text;
-            int city = Convert.ToInt16(cityList.SelectedValue);
+            int model = Convert.ToInt16(planeModelList.SelectedValue);
 
             if (!((Request.QueryString.Count) < 1))
             {
-                int aId = Convert.ToInt32(Request.QueryString.Get("aId"));
+                int planeId = Convert.ToInt32(Request.QueryString.Get("planeId"));
 
                 string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
                 MySqlConnection thisConnection = new MySqlConnection(connection);
@@ -87,15 +88,15 @@ namespace Rom_Airlines
                 //if (isAdmin || (userId == loggedId))
                 //{
 
-                update.CommandText = string.Format("UPDATE airport SET name=@NAME, cityId=@CID WHERE id='{0}'", aId);
+                update.CommandText = string.Format("UPDATE plane SET name=@NAME, modelId=@MID WHERE id='{0}'", planeId);
                 update.Parameters.Add("@NAME", MySqlDbType.VarChar, 30).Value = name;
-                update.Parameters.Add("@CID", MySqlDbType.Int32).Value = city;
+                update.Parameters.Add("@MID", MySqlDbType.Int32).Value = model;
                 //}
 
                 thisConnection.Open();
                 update.ExecuteNonQuery();
 
-                string message = "alert('Airport editted. ID: " + aId + " ');window.location='" + ResolveUrl("~/ViewStaff.aspx") + "'";
+                string message = "alert('Plane editted. ID: " + planeId + " ');window.location='" + ResolveUrl("~/manageplane.aspx") + "'";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
                 //}
                 //else
@@ -111,16 +112,16 @@ namespace Rom_Airlines
             thisConnection.Open();
 
             MySqlCommand insert = thisConnection.CreateCommand();
-            insert.CommandText = String.Format("INSERT INTO airport(name,cityid) VALUES('{0}',{1})",name,city);
+            insert.CommandText = String.Format("INSERT INTO plane(name,modelid) VALUES('{0}',{1})",name,model);
             insert.ExecuteNonQuery();
             int id = Convert.ToInt32(insert.LastInsertedId);
             thisConnection.Close();
-            string message = "alert('The airport is added. ID: " + id + " ');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'";
+            string message = "alert('The plane is added. ID: " + id + " ');window.location='" + ResolveUrl("~/manageplane.aspx") + "'";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
                 }
+
+        
 
         }
     }
 }
-
-
