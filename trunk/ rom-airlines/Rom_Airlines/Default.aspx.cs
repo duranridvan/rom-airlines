@@ -50,6 +50,11 @@ namespace Rom_Airlines
             }
         }
 
+        protected void signUpButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/signup.aspx");
+        }
+
 
     }
 }

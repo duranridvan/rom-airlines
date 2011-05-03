@@ -18,7 +18,7 @@
         <tr>
             <td><li>
                 Email</li></td>
-            <td>
+            <td colspan="2">
                 <asp:TextBox ID="usernameBox" runat="server" MaxLength="50"></asp:TextBox>
             </td>
             <td>
@@ -30,7 +30,7 @@
             <td><li>
                 Password
             </li></td>
-            <td>
+            <td colspan="2">
                 <asp:TextBox ID="passwordBox" runat="server" TextMode="Password" MaxLength="20"></asp:TextBox>
             </td>
             <td>
@@ -39,18 +39,22 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3" align="right"><asp:Button 
+            <td colspan="2" align="right">
+                <asp:Button ID="signUpButton" runat="server" onclick="signUpButton_Click" 
+                    Text="SignUp" />
+            </td>
+            <td colspan="2" align="right"><asp:Button 
                     ID="loginButton" runat="server" Text="Sign In" onclick="loginAut" 
                     onclientclick="loginAut" />
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="4">
                 <asp:Label ID="errorLabel" runat="server" ForeColor="Red"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="4">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
             </td>
         </tr>
