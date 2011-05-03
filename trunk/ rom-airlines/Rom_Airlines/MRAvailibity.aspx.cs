@@ -102,7 +102,7 @@ namespace Rom_Airlines
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "Fligh isn't selected", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Fligh is not selected')", true);
                 return;
             }
 
