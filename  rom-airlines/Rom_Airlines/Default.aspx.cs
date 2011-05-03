@@ -15,6 +15,8 @@ namespace Rom_Airlines
         protected void Page_Load(object sender, EventArgs e)
         {
             
+
+            
         }
 
         
@@ -34,8 +36,7 @@ namespace Rom_Airlines
             {
                 case 1:
                     Session["loggedIn"] = true;
-
-                    Response.Redirect("~/addProject.aspx");
+                    Response.Redirect("~/menu.aspx");
                     break;
                 case 0:
                     errorLabel.Text = "Password is wrong";

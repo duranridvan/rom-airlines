@@ -20,6 +20,10 @@ namespace Rom_Airlines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool isLogged = (bool)Session["loggedIn"];
+            int userId = Convert.ToInt32(Session["loggedId"]);
+            if (!isLogged)
+                Response.Redirect("~/Default.aspx");
             if (!IsPostBack && (!((Request.QueryString.Count) < 1)))
             {
                 addEditButton.Text = "Edit";
