@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <items>
+    <ItemText>Manage Flight</ItemText>
+    <ItemUrl>~/manageflight.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Müşteri Ekle</ItemText>
+    <ItemUrl>~/addCustomer.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Kişi Ekle</ItemText>
+    <ItemUrl>~/addMember.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Projeler</ItemText>
+    <ItemUrl>~/show.aspx?pageId=1</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Müşteriler</ItemText>
+    <ItemUrl>~/show.aspx?pageId=2</ItemUrl>
+    <ItemTitle>Tüm müşterileri görmek için tıklayınız.</ItemTitle>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Kişiler</ItemText>
+    <ItemUrl>~/show.aspx?pageId=3</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Oturum Aç</ItemText>
+    <ItemUrl>~/login.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Oturumu Kapat</ItemText>
+    <ItemUrl>~/login.aspx?logout=1</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+</data>

@@ -14,8 +14,13 @@ namespace Rom_Airlines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
+            if (!((Request.QueryString.Count) < 1))
+            {
+                int logout = Convert.ToInt32(Request.QueryString.Get("logout"));
+                if (logout == 1)
+                    Session["loggedIn"] = false;
+            }
             
         }
 

@@ -9,6 +9,18 @@
 <body>
     <form id="form1" runat="server">
     <div>
+    <table border="0" align="center">
+            <tr >
+                <td >
+                    <asp:Image ID="Image1" runat="server" ImageUrl="/images/BodyHeader.jpg"/>  
+                </td>
+            </tr>
+            <tr align ="center">
+                <td align="center">
+                    <asp:Literal ID="Literal1" runat="server"   ></asp:Literal><br /><hr color="red" />
+                </td>
+            </tr>
+        </table>
     
     </div>
     </form>
