@@ -60,6 +60,7 @@
     <Content Include="AddEditAirport.aspx" />
     <Content Include="addeditstaff.aspx" />
     <Content Include="AssignCabinAttendant.aspx" />
+    <Content Include="AssignCheckInOfficer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="ViewStaff.aspx" />
@@ -88,6 +89,13 @@
     </Compile>
     <Compile Include="AssignCabinAttendant.aspx.designer.cs">
       <DependentUpon>AssignCabinAttendant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignCheckInOfficer.aspx.cs">
+      <DependentUpon>AssignCheckInOfficer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignCheckInOfficer.aspx.designer.cs">
+      <DependentUpon>AssignCheckInOfficer.aspx</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Default.aspx.cs">
