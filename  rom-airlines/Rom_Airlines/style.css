@@ -1,0 +1,48 @@
+﻿body
+{
+    background-color: #eef4fb; 
+    background-image: url(images/BodyTop.png);
+    background-repeat: repeat-x; 
+    margin: 0px; 
+    padding: 0px;
+}
+
+
+#MenuContainer{
+    width: 100%;
+    border-bottom: 0px solid #999999;
+    height: 31px;
+}  
+
+#XmlMenu{
+    display: inline;
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: bold;
+    width: 550px;
+    margin: 0 auto;
+    list-style: none;
+} 
+
+#XmlMenu a{
+    display: block;
+    width: 100px;
+    background-color: #336699;
+    text-align: center;
+    color: #ffffff;
+    line-height: 30px;
+    border-bottom: 3px solid #FF0000;
+}  
+
+#XmlMenu a:hover{
+    background-color: #FF0000;
+}
+
+
+
+
+#XmlMenu li{
+    display:inline-table;
+    float : left;
+    margin-left: 5px;
+}  

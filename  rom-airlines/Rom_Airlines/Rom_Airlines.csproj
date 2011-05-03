@@ -69,6 +69,7 @@
     <Content Include="AssignCheckInOfficer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EditLicence.aspx" />
+    <Content Include="editLicencePilot.aspx" />
     <Content Include="MakeReservation.aspx" />
     <Content Include="ManageAirport.aspx" />
     <Content Include="ManageFlight.aspx" />
@@ -77,7 +78,9 @@
     <Content Include="ManagePlaneModel.aspx" />
     <Content Include="menu.aspx" />
     <Content Include="MRAvailibity.aspx" />
+    <Content Include="rom.jpg" />
     <Content Include="signup.aspx" />
+    <Content Include="style.css" />
     <Content Include="ViewStaff.aspx" />
     <Content Include="Web.config" />
     <Content Include="AssignPilot.aspx" />
@@ -161,6 +164,13 @@
     </Compile>
     <Compile Include="EditLicence.aspx.designer.cs">
       <DependentUpon>EditLicence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editLicencePilot.aspx.cs">
+      <DependentUpon>editLicencePilot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editLicencePilot.aspx.designer.cs">
+      <DependentUpon>editLicencePilot.aspx</DependentUpon>
     </Compile>
     <Compile Include="MakeReservation.aspx.cs">
       <DependentUpon>MakeReservation.aspx</DependentUpon>
