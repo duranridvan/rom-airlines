@@ -24,7 +24,9 @@
                     <asp:TextBox ID="nameBox" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    &nbsp;</td>
+                    <asp:Button ID="changenamebutton" runat="server" 
+                        onclick="changenamebutton_Click" Text="Change" />
+                </td>
             </tr>
             <tr>
                 <td>
@@ -46,7 +48,8 @@
                 </td>
                 <td rowspan="2">
                     <asp:ListBox ID="otherBox" runat="server" Height="200px" Width="100px" 
-                        SelectionMode="Multiple">
+                        SelectionMode="Multiple" 
+                        onselectedindexchanged="otherBox_SelectedIndexChanged">
                     </asp:ListBox>
                 </td>
             </tr>
