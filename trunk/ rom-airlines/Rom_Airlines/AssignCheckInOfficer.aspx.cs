@@ -29,7 +29,6 @@ namespace Rom_Airlines
             OfficerList.DataSource = myDataSet;
             OfficerList.DataTextField = "name";
             OfficerList.DataValueField = "id";
-            OfficerList.DataBind();
             myDataAdapter = new MySqlDataAdapter("select concat(c.name,'-',a.name) as idname, a.id as id from Airport a, City c where c.id = a.cityId", connection);
             myDataSet = new DataSet();
             //DataTable[] dT = new DataTable[2];
