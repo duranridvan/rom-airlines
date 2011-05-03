@@ -23,9 +23,7 @@ namespace Rom_Airlines
                 Response.Redirect("~/Default.aspx");
             bool isLogged = (bool)Session["loggedIn"];
             int userId = Convert.ToInt32(Session["loggedId"]);
-            if (isLogged) ;
-            //Label1.Text = string.Format("Hoşgeldiniz, {0}", dbOps.GetUserName(userId));
-            else
+            if (!isLogged) 
                 Response.Redirect("~/Default.aspx");
 
             CreateXmlMenu();
@@ -56,8 +54,8 @@ namespace Rom_Airlines
                     this.ResolveUrl(dr["ItemUrl"].ToString()) + "\" " +
                     "target=\"" +
                     dr["ItemTarget"].ToString() + "\" " +
-                    "title=\"" +
-                    dr["ItemTitle"].ToString() + "\">" +
+                    "title=\"\">" +
+                    //dr["ItemTitle"].ToString() + "\">" +
                     dr["ItemText"].ToString() + "</a>";
                     strMenu += "</li>";
                 }
@@ -66,7 +64,7 @@ namespace Rom_Airlines
             strMenu += "</li>";
             strMenu += "</div>";
 
-//            Literal1.Text = strMenu;
+            Literal1.Text = strMenu;
         }
     }
 }
