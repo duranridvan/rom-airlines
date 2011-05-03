@@ -68,22 +68,22 @@ namespace Rom_Airlines {
         protected global::System.Web.UI.WebControls.DropDownList landingList;
         
         /// <summary>
-        /// TextBox1 control.
+        /// deptTimeBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox deptTimeBox;
         
         /// <summary>
-        /// TextBox2 control.
+        /// landTimeBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox landTimeBox;
         
         /// <summary>
         /// addeditbutton control.
