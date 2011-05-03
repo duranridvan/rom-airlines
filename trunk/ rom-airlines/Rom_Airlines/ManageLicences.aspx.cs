@@ -17,11 +17,16 @@ namespace Rom_Airlines
 {
     public partial class ManageLicences : System.Web.UI.Page
     {
+       
         string input;
         string connectionString;
         MySqlConnection connection;
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool isLogged = (bool)Session["loggedIn"];
+            int userId = Convert.ToInt32(Session["loggedId"]);
+            if (!isLogged)
+                Response.Redirect("~/Default.aspx");
             connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);

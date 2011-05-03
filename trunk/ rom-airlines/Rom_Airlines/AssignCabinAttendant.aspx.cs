@@ -20,6 +20,10 @@ namespace Rom_Airlines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool isLogged = (bool)Session["loggedIn"];
+            int userId = Convert.ToInt32(Session["loggedId"]);
+            if (!isLogged)
+                Response.Redirect("~/Default.aspx");
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             string select = string.Format("select s.name,s.id from SystemUser s, CabinAttendant c where s.id = c.id;");

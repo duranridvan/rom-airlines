@@ -19,6 +19,10 @@ namespace Rom_Airlines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool isLogged = (bool)Session["loggedIn"];
+            int userId = Convert.ToInt32(Session["loggedId"]);
+            if (!isLogged)
+                Response.Redirect("~/Default.aspx");
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             string select = "select concat(c.name,'-',a.name) as aname, a.id as id from Airport a, City c where c.id = a.cityId;";
