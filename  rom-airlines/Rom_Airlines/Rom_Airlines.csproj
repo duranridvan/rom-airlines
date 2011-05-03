@@ -67,9 +67,10 @@
     <Content Include="AssignCheckInOfficer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EditLicence.aspx" />
+    <Content Include="MakeReservation.aspx" />
     <Content Include="ManageLicences.aspx" />
-    <Content Include="ManagePlaneModel.aspx" />
     <Content Include="ManagePlane.aspx" />
+    <Content Include="ManagePlaneModel.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="ViewStaff.aspx" />
     <Content Include="Web.config" />
@@ -148,6 +149,13 @@
     <Compile Include="EditLicence.aspx.designer.cs">
       <DependentUpon>EditLicence.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MakeReservation.aspx.cs">
+      <DependentUpon>MakeReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeReservation.aspx.designer.cs">
+      <DependentUpon>MakeReservation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageLicences.aspx.cs">
       <DependentUpon>ManageLicences.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,19 +163,19 @@
     <Compile Include="ManageLicences.aspx.designer.cs">
       <DependentUpon>ManageLicences.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManagePlaneModel.aspx.cs">
-      <DependentUpon>ManagePlaneModel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManagePlaneModel.aspx.designer.cs">
-      <DependentUpon>ManagePlaneModel.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ManagePlane.aspx.cs">
       <DependentUpon>ManagePlane.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManagePlane.aspx.designer.cs">
       <DependentUpon>ManagePlane.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePlaneModel.aspx.cs">
+      <DependentUpon>ManagePlaneModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagePlaneModel.aspx.designer.cs">
+      <DependentUpon>ManagePlaneModel.aspx</DependentUpon>
     </Compile>
     <Compile Include="signup.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
