@@ -37,7 +37,7 @@ namespace Rom_Airlines
                 if (uTrue == 1)
                     if (uPass == 1)
                     {
-                        id = (int)thisReader["UserId"];
+                        id = Convert.ToInt16(thisReader["UserId"]);
                         thisReader.Close();
                         thisConnection.Close();
                         return 1;
@@ -82,7 +82,6 @@ namespace Rom_Airlines
                     break;
                 default:
                     return -1;
-                    break;
             }
             thisConnection.Open();
             insert.ExecuteNonQuery();
