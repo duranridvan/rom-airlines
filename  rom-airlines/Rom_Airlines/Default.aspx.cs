@@ -43,7 +43,7 @@ namespace Rom_Airlines
                 if(staffT.Equals("Check In Officer"))
                     Response.Redirect("~/checkin1.aspx");
                 if(staffT.Equals("Pilot")|| staffT.Equals("Cabin Attendant"))
-                    Response.Redirect("~/seeassignment.aspx?staffT="+staffT);
+                    Response.Redirect("~/seeassignment.aspx");
 
                     Response.Redirect("~/menu.aspx");
             }
