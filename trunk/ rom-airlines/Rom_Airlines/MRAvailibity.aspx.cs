@@ -22,12 +22,7 @@ namespace Rom_Airlines
         int noPass;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loggedIn"] == null)
-                Response.Redirect("~/Default.aspx");
-            bool isLogged = (bool)Session["loggedIn"];
-            int userId = Convert.ToInt32(Session["loggedId"]);
-            if (!isLogged)
-                Response.Redirect("~/Default.aspx");
+
 
             string dDate = Request.QueryString.Get("dDate");
             string rDate = Request.QueryString.Get("rDate");
