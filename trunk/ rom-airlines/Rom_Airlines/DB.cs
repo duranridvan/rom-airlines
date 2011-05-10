@@ -17,7 +17,7 @@ namespace Rom_Airlines
     public class DB
     {
 
-        public static int LoginCheck(string username, string password, out int id)
+        public static int LoginCheck(string username, string password, out int id,out string staffT)
         {
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
@@ -30,6 +30,7 @@ namespace Rom_Airlines
             thisCommand.CommandText = select;
             MySqlDataReader thisReader = thisCommand.ExecuteReader();
             id = -1;
+            staffT = "";
             while (thisReader.Read())
             {
                 uTrue = Convert.ToInt16(thisReader["uTrue"]);
@@ -39,6 +40,24 @@ namespace Rom_Airlines
                     {
                         id = Convert.ToInt16(thisReader["UserId"]);
                         thisReader.Close();
+                        select = string.Format("SELECT job FROM staff WHERE id={0}", id);
+                        thisCommand = thisConnection.CreateCommand();
+                        thisCommand.CommandText = select;
+                        thisReader = thisCommand.ExecuteReader();
+                        thisReader.Read();
+                        try
+                        {
+                            staffT = thisReader["job"].ToString();
+                        }
+                        catch (MySqlException e)
+                        {
+                            staffT = "Customer";
+                        }
+                        thisReader.Close();
+
+
+
+
                         thisConnection.Close();
                         return 1;
                     }
