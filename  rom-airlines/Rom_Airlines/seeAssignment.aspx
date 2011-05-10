@@ -8,9 +8,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div style="text-align: center">
+    
+        <h1>
+            <asp:Label ID="HeaderLabel" runat="server" Text="See Assignment"></asp:Label>
+        </h1>
     
     </div>
+    <asp:GridView ID="GridView1" runat="server">
+    </asp:GridView>
     </form>
 </body>
 </html>
