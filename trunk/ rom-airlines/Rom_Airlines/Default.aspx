@@ -25,12 +25,6 @@
                 <asp:RequiredFieldValidator ID="usernameValidator" runat="server" 
                     ControlToValidate="usernameBox" ErrorMessage="Kullanıcı adı giriniz">*</asp:RequiredFieldValidator>
             </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
         </tr>
         <tr>
             <td><li>
@@ -43,12 +37,6 @@
                     <asp:RequiredFieldValidator ID="passwordValidator" runat="server" 
                         ErrorMessage="Şifre Giriniz" ControlToValidate="passwordBox">*</asp:RequiredFieldValidator>
             </td>
-            <td>
-                    &nbsp;</td>
-            <td>
-                    &nbsp;</td>
-            <td>
-                    &nbsp;</td>
         </tr>
         <tr>
             <td colspan="2" align="right">
@@ -57,36 +45,29 @@
                     ID="loginButton" runat="server" Text="Sign In" onclick="loginAut" 
                     onclientclick="loginAut" />
             </td>
-            <td align="right">&nbsp;</td>
-            <td align="right">&nbsp;</td>
-            <td align="right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td align="right">
+                <asp:Button ID="signUpButton" runat="server" onclick="signUpButton_Click" 
+                    Text="SignUp" />
+            </td>
+            <td align="right">
+                <asp:Button ID="resButton" runat="server" onclick="resButton_Click" 
+                    Text="Make Reservation" />
+            </td>
+            <td colspan="2" align="right">
+                <asp:Button ID="checkinbutton" runat="server" onclick="checkinbutton_Click" 
+                    Text="Online Check In" />
+            </td>
         </tr>
         <tr>
             <td colspan="4">
                 <asp:Label ID="errorLabel" runat="server" ForeColor="Red"></asp:Label>
             </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
         </tr>
         <tr>
             <td colspan="4">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-            </td>
-            <td>
-                <asp:Button ID="signUpButton" runat="server" onclick="signUpButton_Click" 
-                    Text="SignUp" />
-            </td>
-            <td>
-                <asp:Button ID="resButton" runat="server" onclick="resButton_Click" 
-                    Text="Make Reservation" />
-            </td>
-            <td>
-                <asp:Button ID="checkinbutton" runat="server" onclick="checkinbutton_Click" 
-                    Text="Online Check In" />
             </td>
         </tr>
     </table>
