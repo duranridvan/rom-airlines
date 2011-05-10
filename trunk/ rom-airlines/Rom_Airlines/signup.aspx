@@ -26,6 +26,14 @@
     <div>
     
         <table align="center" class="style1">
+        <tr>
+            <td colspan="4" align="right">
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/menu.aspx">Menu</asp:LinkButton>
+            </td>
+        </tr>
+        
             <tr>
                 <td colspan="4">
                     Sign Up</td>

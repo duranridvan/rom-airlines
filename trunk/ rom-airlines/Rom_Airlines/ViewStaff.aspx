@@ -5,6 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Untitled Page</title>
+    <style type="text/css">
+        .style1
+        {
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,7 +20,15 @@
             View Staff</h1>
     
     </div>
+            <div class="style1">
+    
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/menu.aspx">Menu</asp:LinkButton>
+    </div>
+    
     <div style="text-align: center">
+    
     
         <p>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

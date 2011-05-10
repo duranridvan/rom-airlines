@@ -10,6 +10,10 @@
         {
             text-align: center;
         }
+        .style1
+        {
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -19,6 +23,14 @@
     </div>
     <h1 style="text-align: center">
         View Customers</h1>
+        
+                <div class="style1">
+    
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/menu.aspx">Menu</asp:LinkButton>
+    </div>
+    
     <p style="text-align: center">
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Search" />
