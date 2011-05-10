@@ -31,7 +31,7 @@ namespace Rom_Airlines
             connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);
-            //string input = TextBox1.Text;
+           
             int resId = Convert.ToInt32(Request.QueryString.Get("rId"));
             string selectQuery = String.Format("SELECT F.id as 'Flight No', F.fdate as 'Date', DA.name as 'Departure Airport', LA.name as 'Landing Airport', F.departureTime as 'Departure Time', F.landingTime as 'Landing Time'  FROM Flight F, Airport DA, Airport LA, ReservationFlight RF WHERE F.departureAirport=DA.id and F.landingAirport=LA.id and RF.reserveId={0} and RF.flightId=F.id and RF.flightDate=F.fdate", resId);
             MySqlCommand command = new MySqlCommand(selectQuery, connection);
