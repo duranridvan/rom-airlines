@@ -28,7 +28,7 @@
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="usernameValidator" runat="server" 
-                    ControlToValidate="usernameBox" ErrorMessage="Kullanıcı adı giriniz">*</asp:RequiredFieldValidator>
+                    ControlToValidate="usernameBox" ErrorMessage="Enter Username">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -40,7 +40,7 @@
             </td>
             <td>
                     <asp:RequiredFieldValidator ID="passwordValidator" runat="server" 
-                        ErrorMessage="Şifre Giriniz" ControlToValidate="passwordBox">*</asp:RequiredFieldValidator>
+                        ErrorMessage="Enter Password" ControlToValidate="passwordBox">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
