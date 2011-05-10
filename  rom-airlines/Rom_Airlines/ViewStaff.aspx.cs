@@ -36,8 +36,6 @@ namespace Rom_Airlines
             connection = new MySqlConnection(connectionString);
             //select = string.Format("select s.name from SystemUser s, CabinAttendant c where s.id = c.id;");
 
-            if (true || !IsPostBack)
-            {
                 input = TextBox1.Text;
                 string selectQuery = String.Format("SELECT SU.id as ID, SU.email as 'e-mail', SU.name as Name, SU.phoneNumber as Phone, ST.TcIdNo as 'TC ID', ST.job as 'Staff Type'   FROM SystemUser SU,Staff ST WHERE SU.id=ST.id AND (ST.TcIdNo like '%{0}%'  OR SU.name like '%{0}%' OR Su.email like '%{0}%')", input);
 
@@ -53,7 +51,6 @@ namespace Rom_Airlines
                 myDataAdapter.Fill(myDataTable);
                 StaffView.DataSource = myDataTable;
                 StaffView.DataBind();
-            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

@@ -18,7 +18,6 @@ namespace Rom_Airlines
     public partial class ManageLicences : System.Web.UI.Page
     {
        
-        string input;
         string connectionString;
         MySqlConnection connection;
         protected void Page_Load(object sender, EventArgs e)

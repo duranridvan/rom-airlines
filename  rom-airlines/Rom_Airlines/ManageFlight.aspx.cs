@@ -18,7 +18,6 @@ namespace Rom_Airlines
     public partial class ManageFlight : System.Web.UI.Page
     {
         
-        string input;
         string connectionString;
         MySqlConnection connection;
         protected void Page_Load(object sender, EventArgs e)
