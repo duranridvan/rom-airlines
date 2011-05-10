@@ -58,9 +58,11 @@ namespace Rom_Airlines
             //string input = TextBox1.Text;
             int resId = Convert.ToInt32(Request.QueryString.Get("rId"));
             string query = String.Format("UPDATE reservation SET paymentStatus=true WHERE id={0}", resId);
-            string message = String.Format("alert('Payment Done. Reservation ID: {0}. You can check in online by using your reservation id')", resId);
+            string message = String.Format("alert('Payment Done. Reservation ID: {0}. You can check in online by using your reservation id')" +
+                ";window.location='" + ResolveUrl("~/") + "'", resId);
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
-            Response.Redirect("~/");
+            //Response.Redirect("~/");
         }
     }
 }
+    
