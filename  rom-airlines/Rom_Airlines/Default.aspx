@@ -8,10 +8,15 @@
     </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div style="text-align: center">
     
     
-        ROM AIRLINES<br />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/rom.jpg" />
+                    </div>
+                    <div>
+              
+        <br />
+        <br />
     
     
     <table align="center">

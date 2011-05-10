@@ -19,7 +19,7 @@
     
         <table align="center" class="style1">
         <tr>
-            <td colspan="2" align="right">
+            <td colspan="4" align="right">
                 <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
                     Font-Strikeout="False" PostBackUrl="~/viewstaff.aspx">Back</asp:LinkButton>

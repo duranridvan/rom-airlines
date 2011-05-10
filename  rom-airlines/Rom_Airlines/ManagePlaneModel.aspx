@@ -35,6 +35,13 @@
                 OnRowEditing="GridPlaneModel_RowEditing" OnRowDeleting="GridPlaneModel_RowDeleting">
             </asp:GridView>
         </p>
+        <p>
+            <asp:LinkButton ID="menuButton0" runat="server" BorderStyle="Outset" 
+                CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                Font-Strikeout="False" PostBackUrl="~/addeditplanemodel.aspx">Add</asp:LinkButton>
+        </p>
+        <p>
+            &nbsp;</p>
     
     </div>
     </form>

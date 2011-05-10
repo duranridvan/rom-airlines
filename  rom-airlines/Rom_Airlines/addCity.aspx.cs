@@ -40,7 +40,7 @@ namespace Rom_Airlines
             insert.ExecuteNonQuery();
             int id = Convert.ToInt32(insert.LastInsertedId);
             thisConnection.Close();
-            string message = "alert('The city is added. ID: " + id + " ');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'";
+            string message = "alert('The city is added. ID: " + id + " ');window.location='" + ResolveUrl("~/addcity.aspx") + "'";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
 
         }

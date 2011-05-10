@@ -101,7 +101,7 @@ namespace Rom_Airlines
                 thisConnection.Open();
                 update.ExecuteNonQuery();
 
-                string message = "alert('Airport editted. ID: " + aId + " ');window.location='" + ResolveUrl("~/ViewStaff.aspx") + "'";
+                string message = "alert('Airport editted. ID: " + aId + " ');window.location='" + ResolveUrl("~/manageairport.aspx") + "'";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
                 //}
                 //else
@@ -121,7 +121,7 @@ namespace Rom_Airlines
             insert.ExecuteNonQuery();
             int id = Convert.ToInt32(insert.LastInsertedId);
             thisConnection.Close();
-            string message = "alert('The airport is added. ID: " + id + " ');window.location='" + ResolveUrl("~/show.aspx?pageId=3") + "'";
+            string message = "alert('The airport is added. ID: " + id + " ');window.location='" + ResolveUrl("~/manageairport.aspx") + "'";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
                 }
 
