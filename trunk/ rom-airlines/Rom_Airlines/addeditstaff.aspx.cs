@@ -23,6 +23,10 @@ namespace Rom_Airlines
             int userId = Convert.ToInt32(Session["loggedId"]);
             if (!isLogged)
                 Response.Redirect("~/Default.aspx");
+
+            string job = Session["job"].ToString();
+            if (!job.Equals("System Admin"))
+                Response.Redirect("~/Default.aspx");
             if (!IsPostBack && (!((Request.QueryString.Count) < 1)))
             {
                 addEditButton.Text = "Edit";
