@@ -71,7 +71,7 @@ namespace Rom_Airlines
                 return -1;
         }
         public static int addStaff(string name, string password, string phone, string email, string birthday, string tc, int staff,string staffS,int salary) {
-            int newId = addSystemUser(name, password, password, email, birthday);
+            int newId = addSystemUser(name, password, phone, email, birthday);
             if (newId == -1) return -1;
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             MySqlConnection thisConnection = new MySqlConnection(connection);
