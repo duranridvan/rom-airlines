@@ -96,6 +96,21 @@ namespace Rom_Airlines
             string deleteQuery = String.Format("delete from systemuser where id='{0}'",id);
             MySqlCommand command = new MySqlCommand(deleteQuery, connection);
             command.ExecuteNonQuery();
+
+
+            string selectQuery = String.Format("SELECT SU.id as ID, SU.email as 'e-mail', SU.name as Name, SU.phoneNumber as Phone, ST.TcIdNo as 'TC ID', ST.job as 'Staff Type'   FROM SystemUser SU,Staff ST WHERE SU.id=ST.id AND (ST.TcIdNo like '%{0}%'  OR SU.name like '%{0}%' OR Su.email like '%{0}%')", input);
+
+            command = new MySqlCommand(selectQuery, connection);
+
+            //command.Parameters.Add("@INPUT", MySqlDbType.VarChar, 50).Value = input;
+
+            MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(command);
+
+
+            DataTable myDataTable = new DataTable();
+
+            myDataAdapter.Fill(myDataTable);
+            StaffView.DataSource = myDataTable;
             StaffView.DataBind();
         }
     }
