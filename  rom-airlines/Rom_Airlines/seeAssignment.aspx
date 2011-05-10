@@ -13,6 +13,11 @@
         <h1>
             <asp:Label ID="HeaderLabel" runat="server" Text="See Assignment"></asp:Label>
         </h1>
+    <div style="text-align: right">
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
+                    </div>
     
     </div>
     <asp:GridView ID="GridView1" runat="server">
