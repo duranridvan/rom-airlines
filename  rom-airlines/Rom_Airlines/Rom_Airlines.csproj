@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B4EB7B5B-D3D3-4C57-8CF2-9E369D3B8169}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -67,6 +67,7 @@
     <Content Include="App_Data\MenuData.xml" />
     <Content Include="AssignCabinAttendant.aspx" />
     <Content Include="AssignCheckInOfficer.aspx" />
+    <Content Include="CheckIn1.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EditLicence.aspx" />
     <Content Include="editLicencePilot.aspx" />
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="AssignCheckInOfficer.aspx.designer.cs">
       <DependentUpon>AssignCheckInOfficer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckIn1.aspx.cs">
+      <DependentUpon>CheckIn1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckIn1.aspx.designer.cs">
+      <DependentUpon>CheckIn1.aspx</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Default.aspx.cs">
@@ -278,9 +286,6 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
