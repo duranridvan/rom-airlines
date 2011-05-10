@@ -14,6 +14,11 @@
             Make Reservation</h1>
     
     </div>
+    <div style="text-align: right">
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
+                    </div>
     <asp:LinkButton ID="LinkButton1" runat="server">Schedule</asp:LinkButton>
 &nbsp;&gt;
     <asp:LinkButton ID="LinkButton2" runat="server">Availibility</asp:LinkButton>
