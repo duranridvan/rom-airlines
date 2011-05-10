@@ -49,6 +49,16 @@
         </p>
     
     </div>
+    <div style="text-align: center">
+    
+        <p>
+    
+                <asp:LinkButton ID="menuButton0" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/addeditstaff.aspx">Add</asp:LinkButton>
+        </p>
+    
+    </div>
     </form>
 </body>
 </html>

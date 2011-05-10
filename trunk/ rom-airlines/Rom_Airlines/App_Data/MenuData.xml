@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <data>
   <items>
-    <ItemText>View Staff</ItemText>
+    <ItemText>Manage Staff</ItemText>
     <ItemUrl>~/viewstaff.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
