@@ -49,15 +49,15 @@
         <tr>
             <td align="right">
                 <asp:Button ID="signUpButton" runat="server" onclick="signUpButton_Click" 
-                    Text="SignUp" />
+                    Text="SignUp" CausesValidation="False" />
             </td>
             <td align="right">
-                <asp:Button ID="resButton" runat="server" onclick="resButton_Click" 
-                    Text="Make Reservation" />
+                <asp:Button ID="resButton" runat="server" CausesValidation="False" 
+                    onclick="resButton_Click" Text="Make Reservation" />
             </td>
             <td colspan="2" align="right">
-                <asp:Button ID="checkinbutton" runat="server" onclick="checkinbutton_Click" 
-                    Text="Online Check In" />
+                <asp:Button ID="checkinbutton" runat="server" CausesValidation="False" 
+                    onclick="checkinbutton_Click" Text="Online Check In" />
             </td>
         </tr>
         <tr>
