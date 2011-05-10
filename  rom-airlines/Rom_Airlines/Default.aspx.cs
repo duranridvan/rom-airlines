@@ -33,10 +33,17 @@ namespace Rom_Airlines
 
             password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "md5");
             int id;
-            int result = DB.LoginCheck(username, password, out id);
+            string staffT;
+            int result = DB.LoginCheck(username, password, out id,out staffT);
+
+
+
+
+
 
             Session["loggedIn"] = false;
             Session["loggedId"] = id;
+            Session["job"] = staffT;
             switch (result)
             {
                 case 1:
