@@ -27,6 +27,9 @@ namespace Rom_Airlines
             int userId = Convert.ToInt32(Session["loggedId"]);
             if (!isLogged)
                 Response.Redirect("~/Default.aspx");
+            string job = Session["job"].ToString();
+            if (!job.Equals("Pilot")&&!job.Equals("Cabin Attendant"))
+                Response.Redirect("~/Default.aspx");
             connectionString = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);

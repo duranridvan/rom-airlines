@@ -27,7 +27,9 @@ namespace Rom_Airlines
             if (!isLogged)
                 Response.Redirect("~/Default.aspx");
 
-
+            string job = Session["job"].ToString();
+            if (!job.Equals("System Admin"))
+                Response.Redirect("~/Default.aspx");
 
             if (!((Request.QueryString.Count) < 1))
             {
