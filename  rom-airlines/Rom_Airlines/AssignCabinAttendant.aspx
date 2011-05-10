@@ -29,6 +29,13 @@
     <div>
     
         <table class="style1">
+        <tr>
+            <td colspan="2" align="right">
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/menu.aspx">Menu</asp:LinkButton>
+            </td>
+        </tr>
             <tr>
                 <td class="style3" colspan="2">
                    <b>Assign Cabin Attendant</b></td>

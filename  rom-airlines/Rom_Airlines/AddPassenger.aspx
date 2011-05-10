@@ -79,7 +79,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    <p>
+        <asp:HyperLink ID="LinkSchedule" runat="server" 
+            NavigateUrl="/MakeReservation.aspx">Schedule</asp:HyperLink>
+    &nbsp;&gt; 
+        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/MRAvailibity.aspx" runat="server">Availibility</asp:HyperLink>
+         &gt; Add Passenger</p>
         <table class="style1">
             <tr>
                 <td class="style2">

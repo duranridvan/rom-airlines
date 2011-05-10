@@ -20,6 +20,7 @@
             Make Reservation</h1>
     
     </div>
+    
     <p>
         <asp:HyperLink ID="LinkSchedule" runat="server" 
             NavigateUrl="/MakeReservation.aspx">Schedule</asp:HyperLink>

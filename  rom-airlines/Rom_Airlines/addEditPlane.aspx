@@ -18,6 +18,13 @@
     
         <table class="style1">
             <tr>
+            <tr>
+            <td colspan="2" align="right">
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/manageplane.aspx">Back</asp:LinkButton>
+            </td>
+        </tr>
                 <td colspan="2">
                     Add/Edit Plane</td>
             </tr>
