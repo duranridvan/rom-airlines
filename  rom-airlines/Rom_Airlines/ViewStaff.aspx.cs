@@ -93,7 +93,7 @@ namespace Rom_Airlines
             int id = Convert.ToInt32(StaffView.Rows[e.RowIndex].Cells[1].Text);
             connection = new MySqlConnection(connectionString);
             connection.Open();
-            string deleteQuery = String.Format("delete from staff where id='{0}'",id);
+            string deleteQuery = String.Format("delete from systemuser where id='{0}'",id);
             MySqlCommand command = new MySqlCommand(deleteQuery, connection);
             command.ExecuteNonQuery();
             StaffView.DataBind();
