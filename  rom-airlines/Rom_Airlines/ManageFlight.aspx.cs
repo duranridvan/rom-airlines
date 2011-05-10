@@ -33,7 +33,7 @@ namespace Rom_Airlines
             DataSet thisDataset = new DataSet();
             connection = new MySqlConnection(connectionString);
             //string input = TextBox1.Text;
-            string selectQuery = String.Format("SELECT F.id as 'Flight No', F.fdate as 'Date', DA.name as 'Departure Airport', LA.name as 'Landing Airport', F.departureTime as 'Departure Time', F.landingTime as 'Landing Time', P.name as 'Plane' FROM Flight F, Airport DA, Airport LA, Plane P WHERE F.departureAirport=DA.id and F.landingAirport=LA.id and P.id = F.planeId");
+            string selectQuery = String.Format("SELECT F.id as 'Flight No', F.fdate as 'Date', DA.name as 'Departure Airport', LA.name as 'Landing Airport', F.departureTime as 'Departure Time', F.landingTime as 'Landing Time', P.name as 'Plane', F.RemainingEconSeats as 'Remaining Seats' FROM Flight F, Airport DA, Airport LA, Plane P WHERE F.departureAirport=DA.id and F.landingAirport=LA.id and P.id = F.planeId");
             MySqlCommand command = new MySqlCommand(selectQuery, connection);
             MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(command);
             DataTable myDataTable = new DataTable();
