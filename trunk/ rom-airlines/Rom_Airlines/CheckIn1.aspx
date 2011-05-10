@@ -23,9 +23,13 @@
         <table class="style1">
         <tr>
             <td colspan="3" align="right">
+            
                 <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
                     Font-Strikeout="False" PostBackUrl="~/default.aspx">Back</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
             </td>
         </tr>
             <tr>

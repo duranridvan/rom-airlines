@@ -78,6 +78,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <div style="text-align: right">
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
+                    </div>
     <div>
     <p>
         <asp:HyperLink ID="LinkSchedule" runat="server" 

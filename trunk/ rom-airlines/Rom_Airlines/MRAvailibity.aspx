@@ -20,7 +20,11 @@
             Make Reservation</h1>
     
     </div>
-    
+    <div style="text-align: right">
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
+                    </div>
     <p>
         <asp:HyperLink ID="LinkSchedule" runat="server" 
             NavigateUrl="/MakeReservation.aspx">Schedule</asp:HyperLink>

@@ -21,7 +21,40 @@ namespace Rom_Airlines
                 if (logout == 1)
                     Session["loggedIn"] = false;
             }
-            
+
+            bool isLogged=false;
+            try
+            {
+                isLogged = (bool)Session["loggedIn"];
+            }
+            catch (Exception exc)
+            {
+                isLogged = false;
+            }
+
+
+                
+            if (isLogged)
+            {
+
+                string staffT = Session["job"].ToString();
+                if(staffT.Equals("Customer") || staffT.Equals("Sales Officer"))
+                    Response.Redirect("~/makereservation.aspx");
+                if(staffT.Equals("Check In Officer"))
+                    Response.Redirect("~/checkin1.aspx");
+                if(staffT.Equals("Pilot")|| staffT.Equals("Cabin Attendant"))
+                    Response.Redirect("~/seeassignment.aspx?staffT="+staffT);
+
+                    Response.Redirect("~/menu.aspx");
+            }
+
+
+
+
+
+
+
+
         }
 
         
