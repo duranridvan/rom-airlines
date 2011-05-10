@@ -30,7 +30,7 @@
             <td colspan="4" align="right">
                 <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
-                    Font-Strikeout="False" PostBackUrl="~/menu.aspx">Menu</asp:LinkButton>
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx">Back</asp:LinkButton>
             </td>
         </tr>
         

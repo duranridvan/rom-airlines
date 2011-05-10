@@ -51,8 +51,8 @@
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Manage Licence</ItemText>
-    <ItemUrl>~/managelicence.aspx</ItemUrl>
+    <ItemText>Manage Licences</ItemText>
+    <ItemUrl>~/managelicences.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
