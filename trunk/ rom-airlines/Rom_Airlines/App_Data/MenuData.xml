@@ -1,44 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <data>
   <items>
+    <ItemText>View Staff</ItemText>
+    <ItemUrl>~/viewstaff.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
     <ItemText>Manage Flight</ItemText>
     <ItemUrl>~/manageflight.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Müşteri Ekle</ItemText>
-    <ItemUrl>~/addCustomer.aspx</ItemUrl>
+    <ItemText>Manage Plane</ItemText>
+    <ItemUrl>~/manageplane.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Kişi Ekle</ItemText>
-    <ItemUrl>~/addMember.aspx</ItemUrl>
+    <ItemText>Manage Plane Model</ItemText>
+    <ItemUrl>~/manageplanemodel.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Projeler</ItemText>
-    <ItemUrl>~/show.aspx?pageId=1</ItemUrl>
+    <ItemText>Assign Pilot</ItemText>
+    <ItemUrl>~/assignpilot.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Müşteriler</ItemText>
-    <ItemUrl>~/show.aspx?pageId=2</ItemUrl>
-    <ItemTitle>Tüm müşterileri görmek için tıklayınız.</ItemTitle>
+    <ItemText>Assign Cabin Attendant</ItemText>
+    <ItemUrl>~/assigncabinattendant.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Kişiler</ItemText>
-    <ItemUrl>~/show.aspx?pageId=3</ItemUrl>
+    <ItemText>Assign Check In Officer</ItemText>
+    <ItemUrl>~/assigncheckinofficer.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Oturum Aç</ItemText>
-    <ItemUrl>~/login.aspx</ItemUrl>
+    <ItemText>View Customers</ItemText>
+    <ItemUrl>~/viewcustomer.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
-    <ItemText>Oturumu Kapat</ItemText>
-    <ItemUrl>~/login.aspx?logout=1</ItemUrl>
+    <ItemText>Manage Airport</ItemText>
+    <ItemUrl>~/manageairport.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Add City</ItemText>
+    <ItemUrl>~/addcity.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Manage Licence</ItemText>
+    <ItemUrl>~/managelicence.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Edit Licences of Pilot</ItemText>
+    <ItemUrl>~/editlicencepilot.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Logout</ItemText>
+    <ItemUrl>~/default.aspx?logout=1</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
 </data>

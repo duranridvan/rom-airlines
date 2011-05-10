@@ -43,12 +43,6 @@ namespace Rom_Airlines
             {
                 DataRow dr = ds.Tables["items"].Rows[i];
 
-                if ((!(bool)(Session["loggedIn"])) && i == 8)
-                    continue;
-                else if (((bool)(Session["loggedIn"])) && i == 7)
-                    continue;
-                else
-                {
                     strMenu += "<li>";
                     strMenu += "<a href=\"" +
                     this.ResolveUrl(dr["ItemUrl"].ToString()) + "\" " +
@@ -58,7 +52,6 @@ namespace Rom_Airlines
                     //dr["ItemTitle"].ToString() + "\">" +
                     dr["ItemText"].ToString() + "</a>";
                     strMenu += "</li>";
-                }
 
             }
             strMenu += "</li>";
