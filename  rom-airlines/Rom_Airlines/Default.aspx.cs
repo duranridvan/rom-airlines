@@ -48,6 +48,13 @@ namespace Rom_Airlines
             {
                 case 1:
                     Session["loggedIn"] = true;
+                    if(staffT.Equals("Customer") || staffT.Equals("Sales Officer"))
+                        Response.Redirect("~/makereservation.aspx");
+                    if(staffT.Equals("Check In Officer"))
+                        Response.Redirect("~/checkin1.aspx");
+                    if(staffT.Equals("Pilot")|| staffT.Equals("Cabin Attendant"))
+                        Response.Redirect("~/seeassignment.aspx?staffT="+staffT);
+
                     Response.Redirect("~/menu.aspx");
                     break;
                 case 0:
@@ -65,6 +72,16 @@ namespace Rom_Airlines
         protected void signUpButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/signup.aspx");
+        }
+
+        protected void resButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/makereservation.aspx");
+        }
+
+        protected void checkinbutton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/checkin1.aspx");
         }
 
 
