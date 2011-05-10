@@ -59,6 +59,9 @@
                     AutoGenerateEditButton="True" OnRowEditing="GridFlights_RowEditing"
                     OnRowDeleting="GridFlights_RowDeleting">
                 </asp:GridView>
+                <br />
+                <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Add 
+                Flight</asp:LinkButton>
             </td>
         </tr>
     </table>

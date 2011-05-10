@@ -69,5 +69,10 @@ namespace Rom_Airlines
             Page_Load(sender, e);
         }
 
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/addeditflight.aspx");
+        }
+
     }
 }
