@@ -63,11 +63,15 @@ namespace Rom_Airlines
             {
                 TextBox3.Visible = false;
                 Label1.Visible = false;
+                RequiredFieldValidator6.Enabled = false;
+                RegularExpressionValidator2.Enabled = false;
             }
             else
             {
                 TextBox3.Visible = true;
                 Label1.Visible = true;
+                RequiredFieldValidator6.Enabled = true;
+                RegularExpressionValidator2.Enabled = true;
             }
         }
     }
