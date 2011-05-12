@@ -19,7 +19,22 @@ namespace Rom_Airlines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int noOfPass = Convert.ToInt16(Request.QueryString.Get("noPass"));
+            if (noOfPass == 1)
+            {
+                RequiredFieldValidator3.Enabled = false;
+                RequiredFieldValidator4.Enabled = false;
+                RequiredFieldValidator5.Enabled = false;
+                RequiredFieldValidator6.Enabled = false;
+                RegularExpressionValidator2.Enabled = false;
+                RegularExpressionValidator3.Enabled = false;
+            }
+            if (noOfPass == 2)
+            {
+                RequiredFieldValidator4.Enabled = false;
+                RequiredFieldValidator6.Enabled = false;
+                RegularExpressionValidator3.Enabled = false;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

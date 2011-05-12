@@ -33,6 +33,8 @@
                     Name</td>
                 <td>
                     <asp:TextBox ID="nameBox" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="nameBox" ErrorMessage="enter name" ValidationGroup="apmodel">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -40,6 +42,9 @@
                     Economy Class Capacity</td>
                 <td>
                     <asp:TextBox ID="econBox" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="econBox" ErrorMessage="enter capacity" 
+                        ValidationGroup="apmodel">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -47,6 +52,9 @@
                     Bussinness Class Capacity</td>
                 <td>
                     <asp:TextBox ID="bussBox" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="bussBox" ErrorMessage="entercapacity" 
+                        ValidationGroup="apmodel">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -54,6 +62,9 @@
                     First Class Capacity</td>
                 <td>
                     <asp:TextBox ID="firstBox" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="firstBox" ErrorMessage="enter capacity" 
+                        ValidationGroup="apmodel">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -61,7 +72,7 @@
                     &nbsp;</td>
                 <td>
                     <asp:Button ID="addEditButton" runat="server" Text="Add" 
-                        onclick="addEditButton_Click" />
+                        onclick="addEditButton_Click" ValidationGroup="apmodel" />
                 </td>
             </tr>
         </table>

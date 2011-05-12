@@ -110,12 +110,21 @@
                     Name</td>
                 <td class="style8">
                     <asp:TextBox ID="NameBox1" runat="server" Height="32px" Width="131px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="NameBox1" ErrorMessage="enter name" ValidationGroup="ap">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style10">
                     &nbsp;&nbsp;&nbsp;&nbsp; Birthday&nbsp;</td>
                 <td class="style4" colspan="2">
                     <asp:TextBox ID="DBox1" runat="server" Height="32px" Width="131px"></asp:TextBox>
-                    (YYYY-MM-DD)</td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="DBox1" Display="Dynamic" ErrorMessage="enter birthday" 
+                        ValidationGroup="ap">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                        ControlToValidate="DBox1" Display="Dynamic" ErrorMessage="YYYY-MM-DD" 
+                        ValidationExpression="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" 
+                        ValidationGroup="ap">YYYY-MM-DD</asp:RegularExpressionValidator>
+                </td>
             </tr>
             <tr>
                 <td class="style3">
@@ -124,12 +133,21 @@
                     Name</td>
                 <td class="style8">
                     <asp:TextBox ID="NameBox2" runat="server" Height="32px" Width="131px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="NameBox2" ErrorMessage="enter name" ValidationGroup="ap">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style10">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Birthday</td>
                 <td class="style4" colspan="2">
                     <asp:TextBox ID="DBox2" runat="server" Height="32px" Width="131px"></asp:TextBox>
-                    (YYYY-MM-DD)</td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                        ControlToValidate="DBox2" Display="Dynamic" ErrorMessage="enter birthday" 
+                        ValidationGroup="ap">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                        ControlToValidate="DBox2" Display="Dynamic" ErrorMessage="YYYY-MM-DD" 
+                        ValidationExpression="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" 
+                        ValidationGroup="ap">YYYY-MM-DD</asp:RegularExpressionValidator>
+                </td>
             </tr>
             <tr>
                 <td class="style3">
@@ -138,12 +156,22 @@
                     Name</td>
                 <td class="style8">
                     <asp:TextBox ID="NameBox3" runat="server" Height="32px" Width="131px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="NameBox3" Display="Dynamic" ErrorMessage="enter name" 
+                        ValidationGroup="ap">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style10">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Birthday</td>
                 <td class="style4" colspan="2">
                     <asp:TextBox ID="DBox3" runat="server" Height="32px" Width="131px"></asp:TextBox>
-                    (YYYY-MM-DD)</td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                        ControlToValidate="DBox3" Display="Dynamic" ErrorMessage="enter birthday" 
+                        ValidationGroup="ap">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                        ControlToValidate="DBox3" Display="Dynamic" ErrorMessage="YYYY-MM-DD" 
+                        ValidationExpression="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" 
+                        ValidationGroup="ap">YYYY-MM-DD</asp:RegularExpressionValidator>
+                </td>
             </tr>
             <tr>
                 <td class="style11">
@@ -158,7 +186,7 @@
                 </td>
                 <td class="style15">
                     <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 
-                        Text="Continue" />
+                        Text="Continue" ValidationGroup="ap" />
                 </td>
             </tr>
         </table>

@@ -18,7 +18,6 @@
     
         <table class="style1">
             <tr>
-            <tr>
             <td colspan="2" align="right">
                 <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
@@ -33,6 +32,8 @@
                     Name</td>
                 <td>
                     <asp:TextBox ID="nameBox" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="nameBox" ErrorMessage="enter name" ValidationGroup="aplane">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -41,6 +42,9 @@
                 <td>
                     <asp:DropDownList ID="planeModelList" runat="server">
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="planeModelList" ErrorMessage="select model" 
+                        ValidationGroup="aplane">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -48,7 +52,7 @@
                     &nbsp;</td>
                 <td>
                     <asp:Button ID="addeditbutton" runat="server" onclick="addeditbutton_Click" 
-                        Text="Add" />
+                        Text="Add" ValidationGroup="aplane" />
                 </td>
             </tr>
         </table>

@@ -41,8 +41,12 @@
                     Reservation ID:</td>
                 <td>
                     <asp:TextBox ID="TextBox1" runat="server" Width="351px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Go" />
+&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="TextBox1" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="chin">*</asp:RequiredFieldValidator>
+                    &nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Go" 
+                        ValidationGroup="chin" />
                 </td>
                 <td>
                     &nbsp;</td>
