@@ -29,6 +29,7 @@ namespace Rom_Airlines
                 Response.Redirect("~/Default.aspx");
             if (!IsPostBack && (!((Request.QueryString.Count) < 1)))
             {
+                CompareValidator2.Enabled = false;
                 addEditButton.Text = "Edit";
                 int staffId = Convert.ToInt32(Request.QueryString.Get("staffId"));
                 //int loggedId = (int)Session["loggedId"];

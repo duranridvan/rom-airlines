@@ -66,7 +66,7 @@
                         ValidationGroup="as">*</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" 
                         ControlToCompare="emailBox" ControlToValidate="emailCBox" 
-                        ErrorMessage="CompareValidator" ValidationGroup="ap">*</asp:CompareValidator>
+                        ErrorMessage="CompareValidator" ValidationGroup="ap" Display="Dynamic">email does not match</asp:CompareValidator>
                 </td>
             </tr>
             <tr>
@@ -87,7 +87,7 @@
                         ValidationGroup="as">*</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator2" runat="server" 
                         ControlToCompare="passwordBox" ControlToValidate="passwordCBox" 
-                        ErrorMessage="CompareValidator" ValidationGroup="ap"></asp:CompareValidator>
+                        ErrorMessage="CompareValidator" ValidationGroup="ap" Display="Dynamic">password does not match</asp:CompareValidator>
                 </td>
             </tr>
             <tr>
