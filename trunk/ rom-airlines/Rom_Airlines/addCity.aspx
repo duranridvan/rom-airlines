@@ -31,6 +31,9 @@
                 City Name</td>
             <td>
                 <asp:TextBox ID="nameBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="nameBox" ErrorMessage="City name must be entered" 
+                    ValidationGroup="city">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -38,7 +41,7 @@
                 &nbsp;</td>
             <td>
                 <asp:Button ID="addButton" runat="server" onclick="addButton_Click1" 
-                    Text="Add" />
+                    Text="Add" ValidationGroup="city" />
             </td>
         </tr>
     </table>
