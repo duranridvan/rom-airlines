@@ -14,6 +14,10 @@
         {
             width: 105px;
         }
+        .style3
+        {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -22,7 +26,14 @@
     
         <table class="style1">
         <tr>
-            <td colspan="3" align="right">
+            <td colspan="3" class="style3">
+            
+                <h1>
+                    Online Check In</h1>
+            </td>
+        </tr>
+            <tr>
+                <td colspan="3" style="text-align: right">
             
                 <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
@@ -30,11 +41,7 @@
                 <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="Outset" 
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
                     Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
-            </td>
-        </tr>
-            <tr>
-                <td colspan="3">
-                    Online Check In</td>
+                </td>
             </tr>
             <tr>
                 <td class="style2">

@@ -11,7 +11,7 @@
 namespace Rom_Airlines {
     
     
-    public partial class CheckIn1 {
+    public partial class CheckIn2 {
         
         /// <summary>
         /// form1 control.
@@ -23,40 +23,49 @@ namespace Rom_Airlines {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// menuButton control.
+        /// Flight1Grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton menuButton;
+        protected global::System.Web.UI.WebControls.GridView Flight1Grid;
         
         /// <summary>
-        /// LinkButton1 control.
+        /// Passengers1Grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.GridView Passengers1Grid;
         
         /// <summary>
-        /// TextBox1 control.
+        /// Seats1List control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.RadioButtonList Seats1List;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// Passengers2Grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.GridView Passengers2Grid;
+        
+        /// <summary>
+        /// Seats2List control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList Seats2List;
         
         /// <summary>
         /// Button1 control.
