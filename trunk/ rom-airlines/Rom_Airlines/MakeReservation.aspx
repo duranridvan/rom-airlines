@@ -39,10 +39,11 @@
         {
             height: 46px;
             width: 158px;
+            text-align: center;
         }
         .style17
         {
-            height: 46px;
+            height: 54px;
         }
         .style18
         {
@@ -66,6 +67,15 @@
         {
             width: 121px;
         }
+        .style23
+        {
+            height: 54px;
+            width: 268435296px;
+        }
+        .style24
+        {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -74,28 +84,33 @@
     
         <table class="style1">
         <tr>
-            <td colspan="6" align="right">
-                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
-                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
-                    Font-Strikeout="False" PostBackUrl="~/default.aspx">Back</asp:LinkButton>
-                    <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="Outset" 
-                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
-                    Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
+            <td colspan="6" class="style24">
+                <h1>
+                    Make Reservation</h1>
             </td>
         </tr>
             <tr>
-                <td colspan="6">
-                    Make Reservation</td>
+                <td colspan="6" class="style24">
+                    <p style="text-align: right">
+                    <asp:LinkButton ID="LinkButton1" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
+                <asp:LinkButton ID="menuButton" runat="server" BorderStyle="Outset" 
+                    CausesValidation="False" Font-Bold="True" Font-Overline="False" 
+                    Font-Strikeout="False" PostBackUrl="~/default.aspx">Back</asp:LinkButton>
+                    </p>
+                </td>
             </tr>
             <tr>
                 <td class="style17" colspan="3">
-                    <asp:RadioButton ID="OneWay" runat="server" 
-                        oncheckedchanged="RadioButton1_CheckedChanged" Text="One Way" />
-                    <asp:RadioButton ID="RoundTrip" runat="server" 
-                        oncheckedchanged="RoundTrip_CheckedChanged" Text="RoundTrip" />
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" 
+                        onselectedindexchanged="RadioButtonList1_SelectedIndexChanged">
+                        <asp:ListItem Value="1">One Way</asp:ListItem>
+                        <asp:ListItem Value="2">Round Trip</asp:ListItem>
+                    </asp:RadioButtonList>
                 </td>
-                <td class="style19" colspan="3">
-                </td>
+                <td class="style23" colspan="3">
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="style10">
@@ -120,7 +135,8 @@
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 </td>
                 <td class="style15">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return Date&nbsp;&nbsp;&nbsp;&nbsp; :</td>
+&nbsp;<asp:Label ID="Label1" runat="server" style="text-align: center" Text="Return Date:"></asp:Label>
+                </td>
                 <td class="style19" colspan="2">
                     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
                 </td>

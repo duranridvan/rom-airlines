@@ -17,6 +17,7 @@ namespace Rom_Airlines
 {
     public partial class MakeReservation : System.Web.UI.Page
     {
+        int x;
         protected void Page_Load(object sender, EventArgs e)
         {
             string connection = ConfigurationManager.ConnectionStrings["dbCon"].ToString();
@@ -49,19 +50,25 @@ namespace Rom_Airlines
             dDate = TextBox2.Text;
             rDate = TextBox3.Text;
             int noOfPassengers = Convert.ToInt16(TextBox1.Text);
-            int y = x;
+            x = Convert.ToInt32(RadioButtonList1.SelectedValue);
             Response.Redirect("~/MRAvailibity.aspx?dDate=" + dDate +"&rDate="+rDate+"&from="+From.SelectedValue+"&to="+To.SelectedValue+"&noPass="+noOfPassengers+"&type="+x);
 
         }
-        int x;
-        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            x = 1;
-        }
+        
 
-        protected void RoundTrip_CheckedChanged(object sender, EventArgs e)
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            x = 2;
+            x = Convert.ToInt32(RadioButtonList1.SelectedValue);
+            if (x == 1)
+            {
+                TextBox3.Visible = false;
+                Label1.Visible = false;
+            }
+            else
+            {
+                TextBox3.Visible = true;
+                Label1.Visible = true;
+            }
         }
     }
 }

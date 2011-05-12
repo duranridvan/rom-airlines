@@ -29,7 +29,7 @@
         <asp:HyperLink ID="LinkSchedule" runat="server" 
             NavigateUrl="/MakeReservation.aspx">Schedule</asp:HyperLink>
     &nbsp;&gt; Availibility</p>
-    <table class="style1" border="1">
+    <table class="style1" border="1" id="table1" runat="server">
         <tr>
             <td>
                 <asp:Button ID="Button1" runat="server" Text="Previous Day" />
@@ -43,7 +43,7 @@
                 <asp:Button ID="Button3" runat="server" Text="Next Day" />
             </td>
         </tr>
-        <tr>
+        <tr id="returnRow" runat="server" >
             <td>
                 <asp:Button ID="Button2" runat="server" Text="Previous Day" />
             </td>
