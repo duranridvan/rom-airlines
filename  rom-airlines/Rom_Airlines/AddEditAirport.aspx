@@ -40,6 +40,8 @@
                     Airport Name</td>
                 <td>
                     <asp:TextBox ID="nameBox" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="nameBox" ErrorMessage="Enter name" ValidationGroup="manair">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -48,6 +50,9 @@
                 <td>
                     <asp:DropDownList ID="cityList" runat="server">
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="cityList" ErrorMessage="Select city" 
+                        ValidationGroup="manair">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -55,7 +60,7 @@
                     &nbsp;</td>
                 <td>
                     <asp:Button ID="addButton" runat="server" Text="Add" 
-                        onclick="addButton_Click" />
+                        onclick="addButton_Click" ValidationGroup="manair" />
                 </td>
             </tr>
         </table>
