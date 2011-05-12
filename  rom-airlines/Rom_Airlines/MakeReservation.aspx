@@ -117,6 +117,7 @@
             </tr>
             <tr>
                 <td class="style10">
+                    From:
                     <asp:DropDownList ID="From" runat="server">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -124,6 +125,7 @@
                         ValidationGroup="mr1">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style20" colspan="2">
+                    To:
                     <asp:DropDownList ID="To" runat="server">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
