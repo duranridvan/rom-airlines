@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <data>
   <items>
-    <ItemText>See Rezervations</ItemText>
-    <ItemUrl>~/rezervations.aspx</ItemUrl>
+    <ItemText>See Reservations</ItemText>
+    <ItemUrl>~/reservations.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
