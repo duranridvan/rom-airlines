@@ -51,9 +51,12 @@
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     <asp:Button ID="Button2" runat="server" onclick="Button2_Click1" 
                         style="height: 26px" Text="Ok" ValidationGroup="apilot" />
-                    &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" 
+                    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="TextBox1" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="apilot">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" 
                         runat="server" ControlToValidate="TextBox1" Display="Dynamic" 
-                        ErrorMessage="RegularExpressionValidator" 
+                        ErrorMessage="YYYY-MM-DD" 
                         ValidationExpression="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" 
                         ValidationGroup="apilot">YYYY-MM-DD</asp:RegularExpressionValidator>
                 </td>

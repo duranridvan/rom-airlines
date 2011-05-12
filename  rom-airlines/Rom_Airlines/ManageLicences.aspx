@@ -39,10 +39,10 @@
     <asp:TextBox ID="TextBox1" runat="server"  
         style="text-align: center" ValidationGroup="ml"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-        ControlToValidate="TextBox1" ErrorMessage="RequiredFieldValidator" 
-        ValidationGroup="ml">*</asp:RequiredFieldValidator>
+        ControlToValidate="TextBox1" Display="Dynamic" 
+        ErrorMessage="RequiredFieldValidator" ValidationGroup="ml">*</asp:RequiredFieldValidator>
     <asp:Button ID="Button1" runat="server" style="text-align: center" 
-        Text="Add Licence" onclick="Button1_Click" />
+        Text="Add Licence" onclick="Button1_Click" ValidationGroup="ml" />
     <br />
     </form>
 </body>
