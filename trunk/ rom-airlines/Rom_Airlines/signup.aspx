@@ -32,11 +32,15 @@
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
                     Font-Strikeout="False" PostBackUrl="~/default.aspx">Back</asp:LinkButton>
             </td>
+            <td align="right">
+                &nbsp;</td>
         </tr>
         
             <tr>
                 <td colspan="4">
                     Sign Up</td>
+                <td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="style2">
@@ -47,6 +51,8 @@
                         ControlToValidate="nameBox" ErrorMessage="RequiredFieldValidator" 
                         ValidationGroup="sup">*</asp:RequiredFieldValidator>
                 </td>
+                <td class="style3">
+                    &nbsp;</td>
                 <td class="style3">
                     &nbsp;</td>
                 <td class="style3">
@@ -68,6 +74,8 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                         ControlToValidate="emailCBox" ErrorMessage="RequiredFieldValidator" 
                         ValidationGroup="sup">*</asp:RequiredFieldValidator>
+                </td>
+                <td class="style3">
                     <asp:CompareValidator ID="CompareValidator1" runat="server" 
                         ControlToCompare="emailBox" ControlToValidate="emailCBox" Display="Dynamic" 
                         ErrorMessage="CompareValidator" ValidationGroup="sup">email does not match</asp:CompareValidator>
@@ -89,6 +97,8 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                         ControlToValidate="passwordCBox" ErrorMessage="RequiredFieldValidator" 
                         ValidationGroup="sup">*</asp:RequiredFieldValidator>
+                </td>
+                <td class="style3">
                     <asp:CompareValidator ID="CompareValidator2" runat="server" 
                         ControlToCompare="passwordBox" ControlToValidate="passwordCBox" 
                         ErrorMessage="CompareValidator" ValidationGroup="sup">password does not match</asp:CompareValidator>
@@ -103,6 +113,8 @@
                         ControlToValidate="phoneBox" ErrorMessage="RequiredFieldValidator" 
                         ValidationGroup="sup">*</asp:RequiredFieldValidator>
                 </td>
+                <td class="style3">
+                    &nbsp;</td>
                 <td class="style3">
                     &nbsp;</td>
                 <td class="style3">
@@ -125,6 +137,8 @@
                     &nbsp;</td>
                 <td class="style3">
                     &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="style2">
@@ -137,6 +151,8 @@
                     <asp:Button ID="Button2" runat="server" Text="Sign Up" 
                         onclick="Button2_Click" ValidationGroup="sup" />
                 </td>
+                <td class="style3">
+                    &nbsp;</td>
                 <td class="style3">
                     &nbsp;</td>
             </tr>

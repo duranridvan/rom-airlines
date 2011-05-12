@@ -55,6 +55,9 @@
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     <asp:Button ID="Button2" runat="server" onclick="Button2_Click1" 
                         style="height: 26px" Text="Ok" ValidationGroup="aca" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="*" 
+                        ValidationGroup="aca">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                         ControlToValidate="TextBox1" Display="Dynamic" 
                         ErrorMessage="RegularExpressionValidator" 

@@ -66,7 +66,7 @@
                         ValidationGroup="as">*</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" 
                         ControlToCompare="emailBox" ControlToValidate="emailCBox" 
-                        ErrorMessage="CompareValidator" ValidationGroup="ap" Display="Dynamic">email does not match</asp:CompareValidator>
+                        ErrorMessage="CompareValidator" ValidationGroup="as" Display="Dynamic">email does not match</asp:CompareValidator>
                 </td>
             </tr>
             <tr>
@@ -87,7 +87,7 @@
                         ValidationGroup="as">*</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator2" runat="server" 
                         ControlToCompare="passwordBox" ControlToValidate="passwordCBox" 
-                        ErrorMessage="CompareValidator" ValidationGroup="ap" Display="Dynamic">password does not match</asp:CompareValidator>
+                        ErrorMessage="CompareValidator" ValidationGroup="as" Display="Dynamic">password does not match</asp:CompareValidator>
                 </td>
             </tr>
             <tr>
@@ -122,7 +122,7 @@
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                         ControlToValidate="birthdayBox" ErrorMessage="RegularExpressionValidator" 
                         ValidationExpression="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" 
-                        ValidationGroup="ap">YYYY-MM-DD</asp:RegularExpressionValidator>
+                        ValidationGroup="as">YYYY-MM-DD</asp:RegularExpressionValidator>
                 </td>
                 <td>
                     Salary</td>
@@ -140,7 +140,7 @@
                 </td>
                 <td colspan="2">
                     <asp:Button ID="addEditButton" runat="server" Text="Create" 
-                        onclick="addEditButton_Click" ValidationGroup="ap" />
+                        onclick="addEditButton_Click" ValidationGroup="as" />
                 </td>
             </tr>
         </table>
