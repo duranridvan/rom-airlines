@@ -19,11 +19,14 @@
                     CausesValidation="False" Font-Bold="True" Font-Overline="False" 
                     Font-Strikeout="False" PostBackUrl="~/default.aspx?logout=1">Logout</asp:LinkButton>
                     </div>
-    <asp:LinkButton ID="LinkButton1" runat="server">Schedule</asp:LinkButton>
+    <asp:LinkButton ID="LinkButton1" runat="server" 
+        PostBackUrl="~/MakeReservation.aspx">Schedule</asp:LinkButton>
 &nbsp;&gt;
-    <asp:LinkButton ID="LinkButton2" runat="server">Availibility</asp:LinkButton>
+    <asp:LinkButton ID="LinkButton2" runat="server" 
+        PostBackUrl="~/MRAvailibity.aspx">Availibility</asp:LinkButton>
 &nbsp;&gt;
-    <asp:LinkButton ID="LinkButton3" runat="server">Passengers</asp:LinkButton>
+    <asp:LinkButton ID="LinkButton3" runat="server" 
+        PostBackUrl="~/AddPassenger.aspx">Passengers</asp:LinkButton>
 &nbsp;&gt; Payment<asp:GridView ID="FlightGrid" runat="server">
     </asp:GridView>
     <br />
