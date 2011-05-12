@@ -37,7 +37,10 @@
     <br />
     <asp:Label ID="Label1" runat="server" Text="Licence Name"></asp:Label>
     <asp:TextBox ID="TextBox1" runat="server"  
-        style="text-align: center"></asp:TextBox>
+        style="text-align: center" ValidationGroup="ml"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+        ControlToValidate="TextBox1" ErrorMessage="RequiredFieldValidator" 
+        ValidationGroup="ml">*</asp:RequiredFieldValidator>
     <asp:Button ID="Button1" runat="server" style="text-align: center" 
         Text="Add Licence" onclick="Button1_Click" />
     <br />

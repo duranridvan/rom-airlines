@@ -139,7 +139,9 @@
                         ControlToValidate="TextBox2" ErrorMessage="RequiredFieldValidator" 
                         ValidationGroup="mr1">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                        ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+                        ControlToValidate="TextBox2" ErrorMessage="RegularExpressionValidator" 
+                        ValidationExpression="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" 
+                        ValidationGroup="mr1">YYYY-MM-DD</asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -160,7 +162,9 @@
                         ControlToValidate="TextBox3" ErrorMessage="RequiredFieldValidator" 
                         ValidationGroup="mr1">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                        ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+                        ControlToValidate="TextBox3" ErrorMessage="RegularExpressionValidator" 
+                        ValidationExpression="^(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" 
+                        ValidationGroup="mr1">YYYY-MM-DD</asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
