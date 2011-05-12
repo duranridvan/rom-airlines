@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B4EB7B5B-D3D3-4C57-8CF2-9E369D3B8169}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -68,6 +68,7 @@
     <Content Include="AssignCabinAttendant.aspx" />
     <Content Include="AssignCheckInOfficer.aspx" />
     <Content Include="CheckIn1.aspx" />
+    <Content Include="CheckIn2.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EditLicence.aspx" />
     <Content Include="editLicencePilot.aspx" />
@@ -80,6 +81,7 @@
     <Content Include="menu.aspx" />
     <Content Include="MRAvailibity.aspx" />
     <Content Include="Payment.aspx" />
+    <Content Include="Reports.aspx" />
     <Content Include="reservations.aspx" />
     <Content Include="rom.jpg" />
     <Content Include="seeAssignment.aspx" />
@@ -160,6 +162,13 @@
     </Compile>
     <Compile Include="CheckIn1.aspx.designer.cs">
       <DependentUpon>CheckIn1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckIn2.aspx.cs">
+      <DependentUpon>CheckIn2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckIn2.aspx.designer.cs">
+      <DependentUpon>CheckIn2.aspx</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Default.aspx.cs">
@@ -246,6 +255,13 @@
     <Compile Include="Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="reservations.aspx.cs">
       <DependentUpon>reservations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,9 +326,6 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

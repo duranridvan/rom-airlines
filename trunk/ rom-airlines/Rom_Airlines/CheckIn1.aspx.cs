@@ -37,7 +37,7 @@ namespace Rom_Airlines
             int uTrue = Convert.ToInt16(thisReader["uTrue"]);
             if (uTrue == 0)
             {
-                string message = "alert('There is no reservation with id = " + rId + "');window.location='" + ResolveUrl("~/CheckIn1.aspx") + "'";
+                string message = "alert('There is no reservation with id = " + rId + "');window.location='" + ResolveUrl("~/CheckIn.aspx") + "'";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", message, true);
                 return;
             }
