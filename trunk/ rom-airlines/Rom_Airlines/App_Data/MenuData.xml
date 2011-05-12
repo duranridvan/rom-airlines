@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <data>
   <items>
+    <ItemText>See Rezervations</ItemText>
+    <ItemUrl>~/rezervations.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
     <ItemText>Manage Staff</ItemText>
     <ItemUrl>~/viewstaff.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
@@ -58,6 +63,11 @@
   <items>
     <ItemText>Edit Licences of Pilot</ItemText>
     <ItemUrl>~/editlicencepilot.aspx</ItemUrl>
+    <ItemTarget>_parent</ItemTarget>
+  </items>
+  <items>
+    <ItemText>Reports</ItemText>
+    <ItemUrl>~/reports.aspx</ItemUrl>
     <ItemTarget>_parent</ItemTarget>
   </items>
   <items>
