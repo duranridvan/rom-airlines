@@ -108,6 +108,9 @@
                         <asp:ListItem Value="1">One Way</asp:ListItem>
                         <asp:ListItem Value="2">Round Trip</asp:ListItem>
                     </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="RadioButtonList1" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="mr1">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style23" colspan="3">
                     &nbsp;</td>
@@ -116,16 +119,27 @@
                 <td class="style10">
                     <asp:DropDownList ID="From" runat="server">
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="From" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="mr1">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style20" colspan="2">
                     <asp:DropDownList ID="To" runat="server">
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="To" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="mr1">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style21">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Departure Date:&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
                 <td class="style13" colspan="2">
                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                        ControlToValidate="TextBox2" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="mr1">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                        ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -133,12 +147,20 @@
                     Number Of Passengers&nbsp;:</td>
                 <td class="style9">
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="TextBox1" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="mr1">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="style15">
 &nbsp;<asp:Label ID="Label1" runat="server" style="text-align: center" Text="Return Date:"></asp:Label>
                 </td>
                 <td class="style19" colspan="2">
                     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                        ControlToValidate="TextBox3" ErrorMessage="RequiredFieldValidator" 
+                        ValidationGroup="mr1">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                        ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -149,7 +171,8 @@
                 <td class="style14" colspan="2">
                     &nbsp;</td>
                 <td class="style11">
-                    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Search" />
+                    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Search" 
+                        ValidationGroup="mr1" />
                 </td>
             </tr>
         </table>
