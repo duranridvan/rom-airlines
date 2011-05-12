@@ -63,7 +63,7 @@ namespace Rom_Airlines
             string date = parseDate(GridFlights.Rows[e.RowIndex].Cells[2].Text);
             connection = new MySqlConnection(connectionString);
             connection.Open();
-            string deleteQuery = String.Format("delete from flight where id='{0}' fdate = '{1}'", id, date);
+            string deleteQuery = String.Format("delete from flight where id='{0}' and fdate = '{1}'", id, date);
             MySqlCommand command = new MySqlCommand(deleteQuery, connection);
             command.ExecuteNonQuery();
             GridFlights.DataBind();
