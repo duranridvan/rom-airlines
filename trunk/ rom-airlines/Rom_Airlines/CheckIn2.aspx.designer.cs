@@ -41,15 +41,6 @@ namespace Rom_Airlines {
         protected global::System.Web.UI.WebControls.GridView Passengers1Grid;
         
         /// <summary>
-        /// Seats1List control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList Seats1List;
-        
-        /// <summary>
         /// Passengers2Grid control.
         /// </summary>
         /// <remarks>
@@ -57,15 +48,6 @@ namespace Rom_Airlines {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView Passengers2Grid;
-        
-        /// <summary>
-        /// Seats2List control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList Seats2List;
         
         /// <summary>
         /// Button1 control.

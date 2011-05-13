@@ -10,11 +10,6 @@
         {
             width: 100%;
         }
-        .style2
-        {
-            height: 23px;
-            text-align: center;
-        }
         .style3
         {
             height: 137px;
@@ -42,19 +37,14 @@
                     <tr>
                         <td>
                             <asp:GridView ID="Passengers1Grid" runat="server" 
-                                AutoGenerateSelectButton="True" style="margin-right: 0px">
-                                <Columns>
-                                    <asp:BoundField HeaderText="Seat" />
-                                </Columns>
+                                style="margin-right: 0px">
                                 <EmptyDataTemplate>
                                     Seat
                                 </EmptyDataTemplate>
                             </asp:GridView>
                         </td>
                         <td>
-                            <asp:RadioButtonList ID="Seats1List" runat="server">
-                            </asp:RadioButtonList>
-                        </td>
+                            &nbsp;</td>
                     </tr>
                 </table>
             </td>
@@ -64,17 +54,11 @@
                 <table class="style1">
                     <tr>
                         <td>
-                            <asp:GridView ID="Passengers2Grid" runat="server" 
-                                AutoGenerateSelectButton="True">
-                                <Columns>
-                                    <asp:BoundField HeaderText="Seat" />
-                                </Columns>
+                            <asp:GridView ID="Passengers2Grid" runat="server">
                             </asp:GridView>
                         </td>
                         <td>
-                            <asp:RadioButtonList ID="Seats2List" runat="server">
-                            </asp:RadioButtonList>
-                        </td>
+                            &nbsp;</td>
                     </tr>
                 </table>
             </td>
@@ -82,7 +66,7 @@
         <tr>
             <td style="text-align: right">
                 <asp:Button ID="Button1" runat="server" style="text-align: right" 
-                    Text="Complete Check-in" />
+                    Text="Complete Check-in" onclick="Button1_Click" />
             </td>
         </tr>
     </table>
